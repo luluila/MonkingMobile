@@ -8,18 +8,30 @@
     <fragment
         android:id="@+id/navigation_home"
         android:name="com.ryutta.monkingmobile.ui.home.HomeFragment"
-        android:label="@string/title_home"
+        android:label="@string/home_barTitle"
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.ryutta.monkingmobile.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_business"
+        android:name="com.ryutta.monkingmobile.ui.business.BusinessFragment"
+        android:label="@string/business_barTitle"
+        tools:layout="@layout/fragment_business" />
+
+    <fragment
+        android:id="@+id/navigation_report"
+        android:name="com.ryutta.monkingmobile.ui.report.ReportFragment"
+        android:label="@string/report_barTitle"
+        tools:layout="@layout/fragment_report" />
 
     <fragment
         android:id="@+id/navigation_notifications"
         android:name="com.ryutta.monkingmobile.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
+        android:label="@string/notification_barTitle"
         tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/navigation_more"
+        android:name="com.ryutta.monkingmobile.ui.notifications.NotificationsFragment"
+        android:label="@string/more_barTitle"
+        tools:layout="@layout/fragment_more" />
 </navigation>
