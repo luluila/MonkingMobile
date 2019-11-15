@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiRetrofit {
 
-    public static final String BASE_URL = "https://monking.com/";
+    public static final String BASE_URL = "https://monking.herokuapp.com/api/auth/login/";
     private static Retrofit retrofit;
 
     public static Retrofit getInstance(){
