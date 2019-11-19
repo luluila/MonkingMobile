@@ -34,6 +34,4 @@
         android:name="com.ryutta.monkingmobile.ui.notifications.NotificationsFragment"
         android:label="@string/more_barTitle"
         tools:layout="@layout/fragment_more" />
-
-
 </navigation>
