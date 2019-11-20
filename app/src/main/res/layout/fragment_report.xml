@@ -7,7 +7,8 @@
     android:layout_height="match_parent"
     android:background="@color/colorBlueDark"
     app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintTop_toTopOf="parent">
+    app:layout_constraintTop_toTopOf="parent"
+    tools:context=".ui.report.ReportFragment">
 
     <ImageView
         android:layout_width="wrap_content"
@@ -15,9 +16,8 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="40dp"
         android:contentDescription="@string/all_backButton"
-        android:src="@drawable/all_backicon_small"
+        android:src="@drawable/all_ic_back_small"
         app:layout_constraintBottom_toTopOf="@id/constrain_report_layerInherit"
-        app:layout_constraintEnd_toStartOf="@+id/tv_report_barTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/constrain_report_layerParent" />
 
@@ -43,20 +43,18 @@
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="28dp"
-        android:layout_marginTop="40dp"
         android:layout_marginEnd="24dp"
-        android:background="@drawable/all_option_white"
-        app:layout_constraintBottom_toTopOf="@id/constrain_report_layerInherit"
+        android:background="@drawable/all_ic_option_white"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_report_barTitle"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tv_report_barTitle"
-        app:layout_constraintTop_toTopOf="@+id/constrain_report_layerParent" />
+        app:layout_constraintTop_toTopOf="@+id/tv_report_barTitle" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constrain_report_layerInherit"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="24dp"
-        android:background="@drawable/all_rounded_background"
+        android:background="@drawable/all_bg_rounded_white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -83,7 +81,7 @@
             android:layout_marginStart="128dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="24dp"
-            android:background="@drawable/all_option_black"
+            android:background="@drawable/all_ic_option_black"
             app:layout_constraintBottom_toTopOf="@+id/view_report_defider"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constrain_stepper3_layerParent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBlueDark"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:context=".ui.stepper_business_finance.StepperBusinessFinanceActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:contentDescription="@string/all_backButton"
+        android:src="@drawable/all_ic_back_small"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_stepper1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/iv_stepper1" />
+
+    <ImageView
+        android:id="@+id/iv_stepper1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/btn_stepper2" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constrain_stepper3_layerInherit"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/all_bg_rounded_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_stepper1">
+
+        <TextView
+            android:id="@+id/tv_stepper3_stepperTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/roboto_regular"
+            android:gravity="center"
+            android:text="BUSINESS FINANCE"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@id/view_stepper3_defider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/constrain_stepper3_layerInherit" />
+
+        <View
+            android:id="@+id/view_stepper3_defider"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_stepper3_stepperTitle" />
+
+        <EditText
+            android:id="@+id/tv_stepper3_capital"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/txt_form"
+            android:ems="10"
+            android:hint="Recent Capital"
+            android:inputType="numberDecimal"
+            android:paddingLeft="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_stepper3_defider" />
+
+        <EditText
+            android:id="@+id/tv_stepper3_cash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/txt_form"
+            android:ems="10"
+            android:hint="Cash"
+            android:inputType="numberDecimal"
+            android:paddingLeft="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.505"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_stepper3_capital" />
+
+        <EditText
+            android:id="@+id/tv_stepper3_debt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/txt_form"
+            android:ems="10"
+            android:hint="Debt"
+            android:inputType="numberDecimal"
+            android:paddingLeft="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_stepper3_cash" />
+
+
+        <EditText
+            android:id="@+id/tv_stepper3_expense"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/txt_form"
+            android:ems="10"
+            android:hint="Expense"
+            android:inputType="textLongMessage"
+            android:paddingLeft="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.48"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_stepper3_debt" />
+
+        <EditText
+            android:id="@+id/tv_stepper3_accounting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="202dp"
+            android:background="@drawable/txt_form"
+            android:ems="10"
+            android:hint="Accounting Period"
+            android:inputType="textLongMessage"
+            android:paddingLeft="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_stepper3_finish"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_stepper3_expense" />
+
+
+        <Button
+            android:id="@+id/btn_stepper3_finish"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:background="@drawable/all_bg_box_blue"
+            android:textSize="16dp"
+            android:text="FINISH"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
