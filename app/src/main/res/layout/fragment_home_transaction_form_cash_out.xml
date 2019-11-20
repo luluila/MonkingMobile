@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:contentDescription="@string/all_backButton"
-        android:src="@drawable/all_backicon_small"
+        android:src="@drawable/all_ic_back_small"
         app:layout_constraintBottom_toBottomOf="tv_form_cashOut_barTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/tv_form_cashOut_barTitle" />
@@ -44,7 +44,7 @@
         android:layout_width="wrap_content"
         android:layout_height="28dp"
         android:layout_marginEnd="24dp"
-        android:background="@drawable/all_option_white"
+        android:background="@drawable/all_ic_option_white"
         app:layout_constraintBottom_toBottomOf="@+id/tv_form_cashOut_barTitle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tv_form_cashOut_barTitle" />
@@ -54,7 +54,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="24dp"
-        android:background="@drawable/all_rounded_background"
+        android:background="@drawable/all_bg_rounded_white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_form_cashOut_barTitle"
         tools:layout_editor_absoluteX="-94dp">
@@ -162,7 +162,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:background="@drawable/btn_box_blue"
+            android:background="@drawable/all_bg_box_blue"
             android:text="SAVE"
             android:textColor="@color/colorWhite"
             android:textSize="16dp"
