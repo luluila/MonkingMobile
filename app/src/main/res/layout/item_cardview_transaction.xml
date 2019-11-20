@@ -22,7 +22,7 @@
             android:id="@+id/iv_cv_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/home_transaction_green"
+            android:src="@drawable/home_ic_transaction_green"
             card_view:layout_constraintBottom_toBottomOf="parent"
             card_view:layout_constraintEnd_toStartOf="@+id/tv_cv_typeTransaction"
             card_view:layout_constraintStart_toStartOf="parent"
