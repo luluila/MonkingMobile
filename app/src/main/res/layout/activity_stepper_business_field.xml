@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:contentDescription="@string/all_backButton"
-        android:src="@drawable/all_backicon_small"
+        android:src="@drawable/all_ic_back_small"
         app:layout_constraintBottom_toBottomOf="@+id/iv_stepper2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/iv_stepper2" />
@@ -35,7 +35,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="24dp"
-        android:background="@drawable/all_rounded_background"
+        android:background="@drawable/all_bg_rounded_white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/iv_stepper2">
 
@@ -85,7 +85,7 @@
             android:id="@+id/btn_stepper2_previous"
             android:layout_width="0dp"
             android:layout_height="56dp"
-            android:background="@drawable/btn_box_blue"
+            android:background="@drawable/all_bg_box_blue"
             android:textSize="16dp"
             android:text="PREV"
             android:textColor="@color/colorWhite"
@@ -97,7 +97,7 @@
             android:id="@+id/btn_stepper2_next"
             android:layout_width="0dp"
             android:layout_height="56dp"
-            android:background="@drawable/btn_box_blue"
+            android:background="@drawable/all_bg_box_blue"
             android:textSize="16dp"
             android:text="NEXT"
             android:textColor="@color/colorWhite"
