@@ -5,7 +5,7 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorBlueMedium</item>
         <item name="colorPrimaryDark">@color/colorBlueDark</item>
-        <item name="colorAccent">@color/colorDanger</item>
+        <item name="colorAccent">@color/colorBlueLight</item>
     </style>
 
     <!-- Splash Screen theme. -->
@@ -42,12 +42,12 @@
 
     <!-- inactive tab icon style -->
     <style name="TextAppearance.BottomNavigationView.Inactive">
-        <item name="android:textSize">12sp</item>
+        <item name="android:textSize">10sp</item>
     </style>
 
     <!-- active tab icon style -->
     <style name="TextAppearance.BottomNavigationView.Active">
-        <item name="android:textSize">12sp</item>
+        <item name="android:textSize">10sp</item>
     </style>
     
 </resources>
