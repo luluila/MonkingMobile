@@ -9,134 +9,29 @@
         android:id="@+id/navigation_home"
         android:name="com.ryutta.monkingmobile.ui.home.HomeFragment"
         android:label="@string/home_barTitle"
-        tools:layout="@layout/fragment_home">
-        <action
-            android:id="@+id/action_navigation_home_to_homeTransactionCashInFragment"
-            app:destination="@id/homeTransactionCashInFragment" />
-        <action
-            android:id="@+id/action_navigation_home_to_homeTransactionCashOutFragment"
-            app:destination="@id/homeTransactionCashOutFragment" />
-        <action
-            android:id="@+id/action_navigation_home_to_homeTransactionDebtFragment"
-            app:destination="@id/homeTransactionDebtFragment" />
-        <action
-            android:id="@+id/action_navigation_home_to_homeTransactionLoanFragment"
-            app:destination="@id/homeTransactionLoanFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_business"
         android:name="com.ryutta.monkingmobile.ui.business.BusinessFragment"
         android:label="@string/business_barTitle"
-        tools:layout="@layout/fragment_business">
-        <action
-            android:id="@+id/action_navigation_business_to_businessHistoryFragment"
-            app:destination="@id/businessHistoryFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_business" />
 
     <fragment
         android:id="@+id/navigation_report"
         android:name="com.ryutta.monkingmobile.ui.report.ReportFragment"
         android:label="@string/report_barTitle"
-        tools:layout="@layout/fragment_report">
-        <action
-            android:id="@+id/action_navigation_report_to_reportBalanceFragment"
-            app:destination="@id/reportBalanceFragment" />
-        <action
-            android:id="@+id/action_navigation_report_to_reportProfitLossFragment"
-            app:destination="@id/reportProfitLossFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_report" />
 
     <fragment
         android:id="@+id/navigation_notifications"
         android:name="com.ryutta.monkingmobile.ui.notifications.NotificationsFragment"
         android:label="@string/notification_barTitle"
-        tools:layout="@layout/fragment_notifications"/>
+        tools:layout="@layout/fragment_notifications" />
 
     <fragment
         android:id="@+id/navigation_more"
         android:name="com.ryutta.monkingmobile.ui.notifications.NotificationsFragment"
         android:label="@string/more_barTitle"
-        tools:layout="@layout/fragment_more">
-        <action
-            android:id="@+id/action_navigation_more_to_moreSettingFragment"
-            app:destination="@id/moreSettingFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/businessHistoryFragment"
-        android:name="com.ryutta.monkingmobile.ui.business_history.BusinessHistoryFragment"
-        android:label="fragment_business_history"
-        tools:layout="@layout/fragment_business_history"/>
-    <fragment
-        android:id="@+id/homeTransactionCashInFragment"
-        android:name="com.ryutta.monkingmobile.ui.home_transaction_cash_in.HomeTransactionCashInFragment"
-        android:label="fragment_home_transaction_cash_in"
-        tools:layout="@layout/fragment_home_transaction_cash_in"/>
-    <fragment
-        android:id="@+id/homeTransactionCashOutFragment"
-        android:name="com.ryutta.monkingmobile.ui.home_transaction_cash_out.HomeTransactionCashOutFragment"
-        android:label="fragment_home_transaction_cash_out"
-        tools:layout="@layout/fragment_home_transaction_cash_out"/>
-    <fragment
-        android:id="@+id/homeTransactionDebtFragment"
-        android:name="com.ryutta.monkingmobile.ui.home_transaction_debt.HomeTransactionDebtFragment"
-        android:label="fragment_home_transaction_debt"
-        tools:layout="@layout/fragment_home_transaction_debt"/>
-    <fragment
-        android:id="@+id/homeTransactionLoanFragment"
-        android:name="com.ryutta.monkingmobile.ui.home_transaction_loan.HomeTransactionLoanFragment"
-        android:label="fragment_home_transaction_loan"
-        tools:layout="@layout/fragment_home_transaction_loan"/>
-    <fragment
-        android:id="@+id/reportBalanceFragment"
-        android:name="com.ryutta.monkingmobile.ui.report_balance.ReportBalanceFragment"
-        android:label="fragment_report_balance"
-        tools:layout="@layout/fragment_report_balance"/>
-    <fragment
-        android:id="@+id/reportProfitLossFragment"
-        android:name="com.ryutta.monkingmobile.ui.report_profit_loss.ReportProfitLossFragment"
-        android:label="fragment_report_profit_loss"
-        tools:layout="@layout/fragment_report_profit_loss"/>
-    <fragment
-        android:id="@+id/moreSettingFragment"
-        android:name="com.ryutta.monkingmobile.ui.more_setting.MoreSettingFragment"
-        android:label="fragment_more_setting"
-        tools:layout="@layout/fragment_more_setting">
-        <action
-            android:id="@+id/action_moreSettingFragment_to_moreSettingProfileFragment"
-            app:destination="@id/moreSettingProfileFragment" />
-        <action
-            android:id="@+id/action_moreSettingFragment_to_moreBusinessProfileFragment"
-            app:destination="@id/moreBusinessProfileFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/moreSettingProfileFragment"
-        android:name="com.ryutta.monkingmobile.ui.more_setting_profile.MoreSettingProfileFragment"
-        android:label="fragment_more_setting_profile"
-        tools:layout="@layout/fragment_more_setting_profile"/>
-    <fragment
-        android:id="@+id/moreBusinessProfileFragment"
-        android:name="com.ryutta.monkingmobile.ui.more_business_profile.MoreBusinessProfileFragment"
-        android:label="fragment_more_business_profile"
-        tools:layout="@layout/fragment_more_business_profile"/>
-    <fragment
-        android:id="@+id/homeTransactionFormCashOutFragment"
-        android:name="com.ryutta.monkingmobile.ui.home_transaction_form_cash_out.HomeTransactionFormCashOutFragment"
-        android:label="fragment_home_transaction_form_cash_out"
-        tools:layout="@layout/fragment_home_transaction_form_cash_out" />
-    <fragment
-        android:id="@+id/homeTransactionFormDebtFragment"
-        android:name="com.ryutta.monkingmobile.ui.home_transaction_form_debt.HomeTransactionFormDebtFragment"
-        android:label="fragment_home_transaction_form_debt"
-        tools:layout="@layout/fragment_home_transaction_form_debt" />
-    <fragment
-        android:id="@+id/homeTransactionFormLoanFragment"
-        android:name="com.ryutta.monkingmobile.ui.home_transaction_form_loan.HomeTransactionFormLoanFragment"
-        android:label="fragment_home_transaction_form_loan"
-        tools:layout="@layout/fragment_home_transaction_form_loan" />
-    <fragment
-        android:id="@+id/homeTransactionFormCashInFragment"
-        android:name="com.ryutta.monkingmobile.ui.home_transaction_form_cash_in.HomeTransactionFormCashInFragment"
-        android:label="fragment_home_transaction_form_cash_in"
-        tools:layout="@layout/fragment_home_transaction_form_cash_in" />
+        tools:layout="@layout/fragment_more" />
 </navigation>
