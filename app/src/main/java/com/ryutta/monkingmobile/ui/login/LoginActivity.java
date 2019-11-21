@@ -1,42 +1,81 @@
 package com.ryutta.monkingmobile.ui.login;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.ryutta.monkingmobile.MainActivity;
 import com.ryutta.monkingmobile.base.BaseActivity;
 import com.ryutta.monkingmobile.R;
 import com.ryutta.monkingmobile.data.remote.api.ApiRetrofit;
 import com.ryutta.monkingmobile.data.remote.api.IApiEndpoint;
 import com.ryutta.monkingmobile.model.respon.ResponseLogin;
+import com.ryutta.monkingmobile.ui.home.HomeFragment;
+import com.ryutta.monkingmobile.ui.reset_password.ResetPasswordActivity;
+import com.ryutta.monkingmobile.ui.sign_up.SignUpActivity;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class LoginActivity extends BaseActivity {
-    private String api_token;
+public class LoginActivity extends BaseActivity implements ILoginView{
+    @BindView(R.id.et_email_login)
+    EditText email;
+
+    @BindView(R.id.et_password_sign_up)
+    EditText passwordSignIn;
+
+    @BindView(R.id.btn_sign_in)
+    Button btnLogin;
+
+    @BindView(R.id.tv_description_sign_in)
+    TextView txtResetPassword;
+
+    @BindView(R.id.tv_sign_in)
+    TextView txtSignIn;
+
+    private LoginPresenter presenter;
+    private Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        ButterKnife.bind(this);
 
-        IApiEndpoint apiEndpoint = ApiRetrofit.getInstance().create(IApiEndpoint.class);
+        presenter = new LoginPresenter(this);
+    }
 
-        apiEndpoint.login("Faiz@monking.com","faiz1234").enqueue(new Callback<ResponseLogin>() {
-            @Override
-            public void onResponse(Call<ResponseLogin> call, Response<ResponseLogin> response) {
-                Log.e("lele",call.request().toString());
-                Log.e("lala", response.toString());
-                api_token = response.body().getToken();
-                Log.d("debug : ", "OK");
-            }
+    @OnClick(R.id.btn_sign_in)
+    public void onLoginClicked(){
+        String emailLogin = email.getText().toString();
+        String password = passwordSignIn.getText().toString();
 
-            @Override
-            public void onFailure(Call<ResponseLogin> call, Throwable t) {
-                Log.e("onFailure : ", "Errorr");
-            }
-        });
+        presenter.doLogin(emailLogin, password);
+    }
+
+    @Override
+    public void moveIntoMain() {
+        intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    @OnClick(R.id.tv_sign_in)
+    public void moveToCreateAccount() {
+        intent = new Intent(this, SignUpActivity.class);
+        startActivity(intent);
+    }
+
+    @OnClick({R.id.tv_description_sign_in})
+    public void moveToReset() {
+        intent = new Intent(this, ResetPasswordActivity.class);
+        startActivity(intent);
     }
 }
