@@ -1,5 +1,6 @@
 package com.ryutta.monkingmobile.data.remote.api;
 
+import com.google.gson.JsonObject;
 import com.ryutta.monkingmobile.model.respon.ResponseAccount;
 import com.ryutta.monkingmobile.model.respon.ResponseCompany;
 import com.ryutta.monkingmobile.model.respon.ResponseCreateAccount;
@@ -61,8 +62,8 @@ public interface IApiEndpoint {
     @PUT("accounts/{account_id}")
     @Headers("Content-Type: application/json;charset=UTF-8")
     Call<ResponseUpdateAccount> updateAccount(
-            @Body String amount
-    );
+            @Body JsonObject jsonObject
+            );
 
     @POST("accounts")
     Call<ResponseCreateAccount> createAccount(
