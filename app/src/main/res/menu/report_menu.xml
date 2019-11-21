@@ -1,18 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item
-        android:id="@+id/report_menu_journal"
-        android:title="Journal"
-        app:showAsAction="never"/>
-    <item
-        android:id="@+id/report_menu_balance"
-        android:title="Balance"
-        app:showAsAction="never"/>
-    <item
-        android:id="@+id/report_menu_profit_loss"
-        android:title="Profit and Loss"
-        app:showAsAction="never"/>
 </menu>

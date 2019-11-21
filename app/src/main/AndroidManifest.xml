@@ -2,9 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ryutta.monkingmobile">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,13 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.stepper_business_field.StepperBusinessFieldActivity"></activity>
-        <activity android:name=".ui.stepper_business_finance.StepperBusinessFinanceActivity" />
-        <activity android:name=".ui.stepper_business_info.StepperBusinessInfoActivity" />
-        <activity android:name=".ui.reset_password.ResetPasswordActivity" />
+        <activity android:name=".SignUp" />
         <activity
-            android:name=".SplashActivity"
-            android:theme="@style/SplashTheme">
+            android:name=".MainActivity"
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -27,5 +21,8 @@
         </activity>
         <activity android:name=".MainActivity" />
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
 </manifest>

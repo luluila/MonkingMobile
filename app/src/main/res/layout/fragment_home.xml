@@ -6,13 +6,12 @@
     android:id="@+id/scrollview_home"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:fillViewport="true"
-    tools:context=".ui.home.HomeFragment">
+    android:fillViewport="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constrain_home_layerParent"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="@color/colorBlueDark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -77,7 +76,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="24dp"
-            android:background="@drawable/all_bg_rounded_white"
+            android:background="@drawable/all_rounded_background"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -128,7 +128,7 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
-                android:src="@drawable/home_ic_cashin"
+                android:src="@drawable/home_cashin_button"
                 app:layout_constraintBottom_toTopOf="@+id/tv_home_cashIn"
                 app:layout_constraintEnd_toStartOf="@+id/ib_home_cashOut"
                 app:layout_constraintStart_toStartOf="parent"
@@ -151,7 +151,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
-                android:src="@drawable/home_ic_cashin"
+                android:src="@drawable/home_cashin_button"
                 app:layout_constraintBottom_toTopOf="@+id/tv_home_cashOut"
                 app:layout_constraintEnd_toStartOf="@+id/ib_home_debt"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -174,7 +174,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
-                android:src="@drawable/home_ic_cashin"
+                android:src="@drawable/home_cashin_button"
                 app:layout_constraintBottom_toTopOf="@+id/tv_home_debt"
                 app:layout_constraintEnd_toStartOf="@+id/ib_home_loan"
                 app:layout_constraintStart_toEndOf="@+id/ib_home_cashOut"
@@ -196,7 +196,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="24dp"
-                android:src="@drawable/home_ic_cashin"
+                android:src="@drawable/home_cashin_button"
                 app:layout_constraintBottom_toTopOf="@+id/tv_home_loan"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -262,4 +262,4 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.core.widget.NestedScrollView>
+</ScrollView>

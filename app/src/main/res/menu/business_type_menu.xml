@@ -1,14 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item
-        android:id="@+id/business_type_profit"
-        android:title="Profit"
-        app:showAsAction="never"/>
-    <item
-        android:id="@+id/business_type_cost"
-        android:title="Cost"
-        app:showAsAction="never"/>
 </menu>
