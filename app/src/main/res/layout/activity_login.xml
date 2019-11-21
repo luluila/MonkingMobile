@@ -84,6 +84,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="56dp"
         android:layout_marginEnd="32dp"
+        style="@style/Widget.AppCompat.Button"
         android:background="@drawable/all_bg_oval_white"
         android:text="Login"
         android:textColor="@color/colorPrimary"
@@ -103,7 +104,7 @@
         android:textColor="@color/colorWhite"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="@+id/view_cv_defider"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btn_sign_in"
         app:layout_constraintStart_toEndOf="@+id/view_cv_defider"
         app:layout_constraintTop_toTopOf="@+id/view_cv_defider" />
 
@@ -134,7 +135,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/view_cv_defider"
         app:layout_constraintEnd_toStartOf="@+id/view_cv_defider"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/btn_sign_in"
         app:layout_constraintTop_toTopOf="@+id/view_cv_defider" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
