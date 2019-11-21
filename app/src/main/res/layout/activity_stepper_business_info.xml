@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constrain_stepper1_layerParent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBlueDark"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:context=".ui.stepper_business_info.StepperBusinessInfoActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:contentDescription="@string/all_backButton"
+        android:src="@drawable/all_ic_back_small"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_stepper1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/iv_stepper1" />
+
+    <ImageView
+        android:id="@+id/iv_stepper1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/btn_stepper2" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constrain_stepper1_layerInherit"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/all_bg_rounded_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_stepper1">
+
+        <TextView
+            android:id="@+id/tv_stepper1_stepperTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/roboto_regular"
+            android:gravity="center"
+            android:text="BUSINESS INFO"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@id/view_stepper1_defider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/constrain_stepper1_layerInherit" />
+
+        <View
+            android:id="@+id/view_stepper1_defider"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_stepper1_stepperTitle" />
+
+        <EditText
+            android:id="@+id/tv_stepper1_companyName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/txt_form"
+            android:ems="10"
+            android:hint="Company Name"
+            android:inputType="numberDecimal"
+            android:paddingLeft="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_stepper1_defider" />
+
+        <EditText
+            android:id="@+id/tv_stepper1_companyEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/txt_form"
+            android:ems="10"
+            android:hint="Company Email"
+            android:inputType="numberDecimal"
+            android:paddingLeft="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_stepper1_companyName" />
+
+        <EditText
+            android:id="@+id/tv_stepper1_companyPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/txt_form"
+            android:ems="10"
+            android:hint="Company Phone"
+            android:inputType="numberDecimal"
+            android:paddingLeft="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_stepper1_companyEmail" />
+
+
+        <EditText
+            android:id="@+id/tv_stepper1_companyAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="49dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="260dp"
+            android:background="@drawable/txt_form"
+            android:ems="10"
+            android:hint="Company Address"
+            android:inputType="textLongMessage"
+            android:paddingLeft="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_stepper1_next"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_stepper1_companyPhone" />
+
+
+        <Button
+            android:id="@+id/btn_stepper1_next"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:background="@drawable/all_bg_box_blue"
+            android:textSize="16dp"
+            android:text="NEXT"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
