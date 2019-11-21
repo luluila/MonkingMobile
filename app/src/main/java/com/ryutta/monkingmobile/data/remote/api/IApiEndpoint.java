@@ -1,6 +1,5 @@
 package com.ryutta.monkingmobile.data.remote.api;
 
-import com.google.gson.JsonObject;
 import com.ryutta.monkingmobile.model.respon.ResponseAccount;
 import com.ryutta.monkingmobile.model.respon.ResponseCompany;
 import com.ryutta.monkingmobile.model.respon.ResponseCreateAccount;
@@ -22,20 +21,20 @@ import retrofit2.http.PUT;
 public interface IApiEndpoint {
 
     @FormUrlEncoded
-    @POST("/auth/login")
+    @POST("login")
     Call<ResponseLogin> login(
         @Field("email") String emailUser,
         @Field("password") String passwordUser
         );
 
-    @POST("/auth/signup")
+    @POST("signup")
     Call<ResponseSignup> signup(
             @Field("name") String userName,
             @Field("email") String emailUser,
             @Field("password") String password
     );
 
-    @GET("/auth/user")
+    @GET("user")
     Call<ResponseUser> getUser(
 
     );
@@ -62,8 +61,8 @@ public interface IApiEndpoint {
     @PUT("accounts/{account_id}")
     @Headers("Content-Type: application/json;charset=UTF-8")
     Call<ResponseUpdateAccount> updateAccount(
-            @Body JsonObject jsonObject
-            );
+            @Body String amount
+    );
 
     @POST("accounts")
     Call<ResponseCreateAccount> createAccount(

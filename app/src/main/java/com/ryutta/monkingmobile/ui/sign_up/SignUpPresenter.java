@@ -25,7 +25,7 @@ public class SignUpPresenter {
                 @Override
                 public void onResponse(Call<ResponseSignup> call, Response<ResponseSignup> response) {
                     view.moveToLogin();
-                    Log.d("succes", "succes sign up");
+                    Log.d("success", "success sign up");
                 }
 
                 @Override

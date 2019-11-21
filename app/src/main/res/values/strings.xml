@@ -3,7 +3,7 @@
 
     <string name="home_barTitle">Home</string>
     <string name="more_barTitle">More</string>
-    <string name="notification_barTitle">Notifications</string>
+    <string name="notification_barTitle">Notice</string>
     <string name="business_barTitle">Business</string>
     <string name="report_barTitle">Report</string>
     <string name="home_balance">BALANCE</string>

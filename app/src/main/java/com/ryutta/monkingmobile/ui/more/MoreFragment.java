@@ -16,20 +16,9 @@ import com.ryutta.monkingmobile.R;
 
 public class MoreFragment extends Fragment {
 
-    private MoreViewModel moreViewModel;
-
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        moreViewModel =
-                ViewModelProviders.of(this).get(MoreViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_more, container, false);
-        final TextView textView = root.findViewById(R.id.text_more);
-        moreViewModel.getText().observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
-        return root;
+
+        return inflater.inflate(R.layout.fragment_more, container, false);
     }
 }
