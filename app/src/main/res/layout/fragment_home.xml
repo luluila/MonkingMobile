@@ -75,7 +75,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constrain_home_layerInherit"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
             android:layout_marginTop="24dp"
             android:background="@drawable/all_bg_rounded_white"
             app:layout_constraintEnd_toEndOf="parent"
@@ -123,8 +123,9 @@
 
             <ImageButton
                 android:id="@+id/ib_home_cashIn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="0dp"
+                android:layout_height="65dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
@@ -147,10 +148,13 @@
 
             <ImageButton
                 android:id="@+id/ib_home_cashOut"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="0dp"
+                android:layout_height="65dp"
                 android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
+                android:layout_marginBottom="16dp"
                 android:src="@drawable/home_ic_cashin"
                 app:layout_constraintBottom_toTopOf="@+id/tv_home_cashOut"
                 app:layout_constraintEnd_toStartOf="@+id/ib_home_debt"
@@ -162,6 +166,8 @@
                 android:id="@+id/tv_home_cashOut"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:background="?attr/selectableItemBackground"
                 android:text="@string/all_cashOut"
                 app:layout_constraintBottom_toTopOf="@id/view_home_defider2"
                 app:layout_constraintEnd_toEndOf="@+id/ib_home_cashOut"
@@ -170,8 +176,9 @@
 
             <ImageButton
                 android:id="@+id/ib_home_debt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="0dp"
+                android:layout_height="65dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:src="@drawable/home_ic_cashin"
@@ -192,8 +199,9 @@
 
             <ImageButton
                 android:id="@+id/ib_home_loan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="0dp"
+                android:layout_height="65dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="24dp"
                 android:src="@drawable/home_ic_cashin"
