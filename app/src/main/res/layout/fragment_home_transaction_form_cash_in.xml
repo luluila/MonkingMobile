@@ -41,6 +41,7 @@
         app:layout_constraintTop_toTopOf="@+id/constrain_form_cashIn_layerParent" />
 
     <ImageButton
+        android:id="@+id/ib_menu_transactionForm"
         android:layout_width="wrap_content"
         android:layout_height="28dp"
         android:layout_marginEnd="24dp"
