@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.stepper_business_field.StepperBusinessFieldActivity"></activity>
+        <activity android:name=".ui.home_transaction_form.HomeTransactionFormActivity"></activity>
+        <activity android:name=".ui.stepper_business_field.StepperBusinessFieldActivity" />
         <activity android:name=".ui.stepper_business_finance.StepperBusinessFinanceActivity" />
         <activity android:name=".ui.stepper_business_info.StepperBusinessInfoActivity" />
         <activity android:name=".ui.reset_password.ResetPasswordActivity" />
