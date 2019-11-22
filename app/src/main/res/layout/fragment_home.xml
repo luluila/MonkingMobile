@@ -83,21 +83,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_home_balanceDate">
 
-            <TextView
-                android:id="@+id/text_home"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="8dp"
-                android:textAlignment="center"
-                android:textSize="20sp"
-                app:layout_constraintBottom_toTopOf="@id/rv_home_target"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/constrain_home_layerInherit"
-                tools:text="This is fragment home" />
-
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_home_target"
                 android:layout_width="match_parent"
@@ -106,7 +91,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/text_home"
+                app:layout_constraintTop_toTopOf="parent"
                 tools:itemCount="1"
                 tools:listitem="@layout/item_cardview_business" />
 
