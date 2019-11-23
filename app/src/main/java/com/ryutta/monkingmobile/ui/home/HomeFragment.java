@@ -1,5 +1,6 @@
 package com.ryutta.monkingmobile.ui.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,19 +19,16 @@ import androidx.navigation.Navigation;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.ryutta.monkingmobile.R;
+import com.ryutta.monkingmobile.ui.home_transaction_form_cash_in.HomeTransactionFormCashInFragment;
 
 public class HomeFragment extends Fragment implements View.OnClickListener {
 
     private NavController navController = null;
-    private FloatingActionButton floatingActionButton = null;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_home, container, false);
-//        floatingActionButton = view.findViewById(R.id.all_fab_new);
-//        floatingActionButton.setOnClickListener(this);
-
         return view;
     }
 
@@ -38,7 +36,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         navController = Navigation.findNavController(view);
-//        floatingActionButton = view.findViewById(R.id.all_fab_new);
         view.findViewById(R.id.ib_home_cashIn).setOnClickListener(this);
         view.findViewById(R.id.ib_home_cashOut).setOnClickListener(this);
         view.findViewById(R.id.ib_home_debt).setOnClickListener(this);
@@ -60,9 +57,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             case R.id.ib_home_loan:
                 navController.navigate(R.id.action_navigation_home_to_homeTransactionLoanFragment);
                 break;
-//            case R.id.all_fab_new:
-//                navController.navigate(R.id.action_navigation_home_to_homeTransactionFormCashInFragment);
-//                break;
         }
 
     }
