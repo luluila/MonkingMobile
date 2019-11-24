@@ -45,7 +45,7 @@
             android:layout_width="355dp"
             android:layout_height="wrap_content"
             android:hint="Email"
-            android:inputType="number|textEmailAddress"
+            android:inputType="textEmailAddress"
             android:textColor="@color/colorWhite"
             android:theme="@style/LoginEditLayout" />
 

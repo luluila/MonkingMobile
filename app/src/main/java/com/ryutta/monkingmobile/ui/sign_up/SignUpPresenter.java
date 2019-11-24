@@ -26,6 +26,7 @@ public class SignUpPresenter {
                 public void onResponse(Call<ResponseSignup> call, Response<ResponseSignup> response) {
                     view.moveToLogin();
                     Log.d("success", "success sign up");
+                    Log.d("token", new ResponseSignup().getToken());
                 }
 
                 @Override

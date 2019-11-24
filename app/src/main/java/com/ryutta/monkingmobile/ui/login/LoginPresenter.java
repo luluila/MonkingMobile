@@ -9,6 +9,7 @@ import com.ryutta.monkingmobile.data.remote.api.ApiRetrofit;
 import com.ryutta.monkingmobile.data.remote.api.IApiEndpoint;
 import com.ryutta.monkingmobile.model.User;
 import com.ryutta.monkingmobile.model.respon.ResponseLogin;
+import com.ryutta.monkingmobile.model.respon.ResponseSignup;
 import com.ryutta.monkingmobile.utils.SharedPrefUtils;
 
 import retrofit2.Call;
@@ -22,15 +23,12 @@ public class LoginPresenter {
 
     private ILoginView view;
     private static SharedPrefUtils sharedPrefUtils;
-    private ResponseLogin responseLogin;
 
     public LoginPresenter(ILoginView view) {
         this.view = view;
     }
 
     void doLogin(String email, String password){
-        String token = BEARER_TOKEN_PREFIX + responseLogin.getToken();
-
         IApiEndpoint apiEndpoint = ApiRetrofit.getInstance().create(IApiEndpoint.class);
 
 
