@@ -51,7 +51,6 @@ public class LoginActivity extends BaseActivity implements ILoginView{
         String password = passwordSignIn.getText().toString();
 
         presenter.doLogin(emailLogin, password);
-        Toast.makeText()
     }
 
     @Override

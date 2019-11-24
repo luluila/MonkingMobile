@@ -39,6 +39,7 @@ public class LoginPresenter {
             public void onResponse(Call<ResponseLogin> call, Response<ResponseLogin> response) {
                 String token = BEARER_TOKEN_PREFIX+ new ResponseLogin().getToken();
                 Log.d("debug : ", "OK");
+                Log.d("token",token );
                 view.moveIntoMain();
                 SharedPrefUtils.setStringSharedPref("LOGIN_TOKEN",token);
             }
@@ -46,7 +47,6 @@ public class LoginPresenter {
             @Override
             public void onFailure(Call<ResponseLogin> call, Throwable t) {
                 Log.e("onFailure : ", "Errorr");
-                Toast.makeText()
             }
         });
     }
