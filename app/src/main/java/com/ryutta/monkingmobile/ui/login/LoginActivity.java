@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.ryutta.monkingmobile.MainActivity;
 import com.ryutta.monkingmobile.R;
@@ -50,6 +51,7 @@ public class LoginActivity extends BaseActivity implements ILoginView{
         String password = passwordSignIn.getText().toString();
 
         presenter.doLogin(emailLogin, password);
+        Toast.makeText()
     }
 
     @Override

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.ryutta.monkingmobile.ui.login.LoginActivity;
+import com.ryutta.monkingmobile.utils.SharedPrefUtils;
 
 public class SplashActivity extends AppCompatActivity {
 
