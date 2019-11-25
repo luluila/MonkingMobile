@@ -38,6 +38,9 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_navigation_home_to_homeTransactionFormCashInFragment"
+            app:destination="@id/homeTransactionFormCashInFragment" />
     </fragment>
 
     <fragment
@@ -154,5 +157,15 @@
         android:id="@+id/homeTransactionFormCashInFragment"
         android:name="com.ryutta.monkingmobile.ui.home_transaction_form_cash_in.HomeTransactionFormCashInFragment"
         android:label="fragment_home_transaction_form_cash_in"
-        tools:layout="@layout/fragment_home_transaction_form_cash_in" />
+        tools:layout="@layout/fragment_home_transaction_form_cash_in" >
+        <action
+            android:id="@+id/action_homeTransactionFormCashInFragment_to_homeTransactionFormCashOutFragment"
+            app:destination="@id/homeTransactionFormCashOutFragment" />
+        <action
+            android:id="@+id/action_homeTransactionFormCashInFragment_to_homeTransactionFormLoanFragment"
+            app:destination="@id/homeTransactionFormLoanFragment" />
+        <action
+            android:id="@+id/action_homeTransactionFormCashInFragment_to_homeTransactionFormDebtFragment"
+            app:destination="@id/homeTransactionFormDebtFragment" />
+    </fragment>
 </navigation>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constrain_form_cashIn_layerInherit"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="137dp"
+        android:layout_marginTop="104dp"
+        android:layout_marginEnd="215dp"
+        android:layout_marginBottom="608dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tv_form_cashIn_stepperTitle"
+        app:layout_constraintBottom_toTopOf="@id/view_form_cashIn_defider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/constrain_form_cashIn_layerInherit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/roboto_regular"
+        android:gravity="center"
+        android:text="CASH IN"
+        android:textSize="14sp" />
+
+    <View
+        android:id="@+id/view_form_cashIn_defider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_form_cashIn_stepperTitle"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/darker_gray" />
+
+    <EditText
+        android:id="@+id/tv_form_cashIn_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_form_cashIn_defider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/txt_form"
+        android:ems="10"
+        android:hint="Insert Title"
+        android:inputType="numberDecimal"
+        android:paddingLeft="20dp" />
+
+    <EditText
+        android:id="@+id/tv_form_cashIn_date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_form_cashIn_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/txt_form"
+        android:ems="10"
+        android:hint="Adjust Date"
+        android:inputType="numberDecimal"
+        android:paddingLeft="20dp" />
+
+    <EditText
+        android:id="@+id/tv_form_cashIn_account"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_form_cashIn_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/txt_form"
+        android:ems="10"
+        android:hint="Select Account"
+        android:inputType="numberDecimal"
+        android:paddingLeft="20dp" />
+
+
+    <EditText
+        android:id="@+id/tv_form_cashIn_to"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_form_cashIn_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/txt_form"
+        android:ems="10"
+        android:hint="To"
+        android:inputType="textLongMessage"
+        android:paddingLeft="20dp" />
+
+
+    <EditText
+        android:id="@+id/tv_form_cashIn_amount"
+        app:layout_constraintBottom_toTopOf="@+id/btn_form_cashIn_next"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_form_cashIn_to"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="192dp"
+        android:background="@drawable/txt_form"
+        android:ems="10"
+        android:hint="Insert Amount"
+        android:inputType="textLongMessage"
+        android:paddingLeft="20dp" />
+
+    <Button
+        android:id="@+id/btn_form_cashIn_next"
+        app:layout_constraintEnd_toEndOf="@+id/tv_form_cashIn_amount"
+        app:layout_constraintStart_toStartOf="@+id/tv_form_cashIn_amount"
+        app:layout_constraintTop_toBottomOf="@+id/tv_form_cashIn_amount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/all_bg_box_blue"
+        android:text="SAVE"
+        android:textColor="@color/colorWhite"
+        android:textSize="16dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
