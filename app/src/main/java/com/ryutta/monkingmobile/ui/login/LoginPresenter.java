@@ -3,14 +3,10 @@ package com.ryutta.monkingmobile.ui.login;
 
 import android.content.SharedPreferences;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.ryutta.monkingmobile.data.remote.api.ApiRetrofit;
 import com.ryutta.monkingmobile.data.remote.api.IApiEndpoint;
-import com.ryutta.monkingmobile.model.User;
 import com.ryutta.monkingmobile.model.respon.ResponseLogin;
-import com.ryutta.monkingmobile.model.respon.ResponseSignup;
-import com.ryutta.monkingmobile.utils.SharedPrefUtils;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -20,9 +16,10 @@ import static com.ryutta.monkingmobile.utils.SharedPrefUtils.getSharedPreference
 
 public class LoginPresenter {
     private static final String BEARER_TOKEN_PREFIX = "Bearer ";
+    private static final String SHARED_PREF_LOGIN = "loginStatus";
+    private static final String SHARED_PREF_USER_TOKEN = "tokenUser";
 
     private ILoginView view;
-    private static SharedPrefUtils sharedPrefUtils;
 
     public LoginPresenter(ILoginView view) {
         this.view = view;
@@ -39,7 +36,8 @@ public class LoginPresenter {
                 Log.d("debug : ", "OK");
                 Log.d("token",token );
                 view.moveIntoMain();
-                SharedPrefUtils.setStringSharedPref("LOGIN_TOKEN",token);
+
+                savePreference(token);
             }
 
             @Override
@@ -47,5 +45,15 @@ public class LoginPresenter {
                 Log.e("onFailure : ", "Errorr");
             }
         });
+    }
+
+    void savePreference(String token){
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREF_LOGIN, "");
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        editor.putString(SHARED_PREF_USER_TOKEN, token);
+        editor.putBoolean(SHARED_PREF_LOGIN, true);
+
+        editor.apply();
     }
 }

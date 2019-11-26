@@ -17,7 +17,7 @@ public class SharedPrefUtils {
         editor.apply();
     }
 
-    public static SharedPreferences getSharedPreferences() {
+    public static SharedPreferences getSharedPreferences(String sharedPrefLogin, String s) {
         return sharedPreferences;
     }
 }
