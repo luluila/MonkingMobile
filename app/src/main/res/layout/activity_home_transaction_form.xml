@@ -7,6 +7,8 @@
     android:layout_height="match_parent"
     android:background="@color/colorBlueDark"
     app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
     tools:context=".ui.home_transaction_form.HomeTransactionFormActivity">
 
@@ -14,7 +16,7 @@
         android:id="@+id/iv_form_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="16dp"
         android:contentDescription="@string/all_backButton"
         android:src="@drawable/all_ic_back_small"
         app:layout_constraintBottom_toBottomOf="@id/tv_form_barTitle"
@@ -43,35 +45,47 @@
         android:id="@+id/ib_menu_transactionForm"
         android:layout_width="wrap_content"
         android:layout_height="28dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginEnd="16dp"
         android:background="@drawable/all_ic_option_white"
         app:layout_constraintBottom_toBottomOf="@+id/tv_form_barTitle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tv_form_barTitle" />
 
-<!--    <androidx.recyclerview.widget.RecyclerView-->
-<!--        android:id="@+id/rv_transaction_form"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="0dp"-->
-<!--        android:layout_marginTop="24dp"-->
-<!--        android:background="@drawable/all_bg_rounded_white"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/tv_form_barTitle"-->
-<!--        tools:listitem="@layout/item_form_debt" />-->
+    <!--    <androidx.recyclerview.widget.RecyclerView-->
+    <!--        android:id="@+id/rv_transaction_form"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="0dp"-->
+    <!--        android:layout_marginTop="24dp"-->
+    <!--        android:background="@drawable/all_bg_rounded_white"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/tv_form_barTitle"-->
+    <!--        tools:listitem="@layout/item_form_debt" />-->
+
+    <!--    <include-->
+    <!--        layout="@layout/item_form_cash_in"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="0dp"-->
+    <!--        android:layout_marginTop="24dp"-->
+    <!--        android:background="@drawable/all_bg_rounded_white"-->
+    <!--        android:visibility="visible"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/iv_form_barTitle"/>-->
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constrain_form_cashIn_layerInherit"
+        android:id="@+id/constrain_form_layerInherit"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="24dp"
         android:background="@drawable/all_bg_rounded_white"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_form_barTitle"
-        tools:layout_editor_absoluteX="-94dp">
+        app:layout_constraintVertical_bias="0.0">
 
         <TextView
-            android:id="@+id/tv_form_cashIn_stepperTitle"
+            android:id="@+id/tv_form_formTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -79,521 +93,426 @@
             android:gravity="center"
             android:text="CASH IN"
             android:textSize="14sp"
-            app:layout_constraintBottom_toTopOf="@id/view_form_cashIn_defider"
+            app:layout_constraintBottom_toTopOf="@id/view_form_defider"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/constrain_form_cashIn_layerInherit" />
+            app:layout_constraintTop_toTopOf="@+id/constrain_form_layerInherit" />
 
         <View
-            android:id="@+id/view_form_cashIn_defider"
+            android:id="@+id/view_form_defider"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:layout_marginTop="16dp"
             android:background="@android:color/darker_gray"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_form_cashIn_stepperTitle" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_form_formTitle" />
 
-        <EditText
-            android:id="@+id/tv_form_cashIn_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:background="@drawable/txt_form"
-            android:ems="10"
-            android:hint="Insert Title"
-            android:inputType="numberDecimal"
-            android:paddingLeft="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view_form_cashIn_defider" />
-
-        <EditText
-            android:id="@+id/tv_form_cashIn_date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/txt_form"
-            android:ems="10"
-            android:hint="Adjust Date"
-            android:inputType="numberDecimal"
-            android:paddingLeft="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_form_cashIn_title" />
-
-        <EditText
-            android:id="@+id/tv_form_cashIn_account"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/txt_form"
-            android:ems="10"
-            android:hint="Select Account"
-            android:inputType="numberDecimal"
-            android:paddingLeft="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_form_cashIn_date" />
-
-
-        <EditText
-            android:id="@+id/tv_form_cashIn_to"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/txt_form"
-            android:ems="10"
-            android:hint="To"
-            android:inputType="textLongMessage"
-            android:paddingLeft="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_form_cashIn_account" />
-
-
-        <EditText
-            android:id="@+id/tv_form_cashIn_amount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="192dp"
-            android:background="@drawable/txt_form"
-            android:ems="10"
-            android:hint="Insert Amount"
-            android:inputType="textLongMessage"
-            android:paddingLeft="20dp"
-            app:layout_constraintBottom_toTopOf="@+id/btn_form_cashIn_next"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_form_cashIn_to" />
-
-        <Button
-            android:id="@+id/btn_form_cashIn_next"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:background="@drawable/all_bg_box_blue"
-            android:text="SAVE"
-            android:textColor="@color/colorWhite"
-            android:textSize="16dp"
-            app:layout_constraintEnd_toEndOf="@+id/tv_form_cashIn_amount"
-            app:layout_constraintStart_toStartOf="@+id/tv_form_cashIn_amount"
-            app:layout_constraintTop_toBottomOf="@+id/tv_form_cashIn_amount" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-    
-<!--    Form Cash Out Layout-->
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constrain_form_cashOut_layerInherit"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/all_bg_rounded_white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_form_barTitle"
-        tools:layout_editor_absoluteX="-94dp"
-        android:visibility="gone">
-
-        <TextView
-            android:id="@+id/tv_form_cashOut_stepperTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:fontFamily="@font/roboto_regular"
-            android:gravity="center"
-            android:text="CASH OUT"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toTopOf="@id/view_form_cashOut_defider"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/constrain_form_cashOut_layerInherit" />
-
-        <View
-            android:id="@+id/view_form_cashOut_defider"
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scrollview_form_transaction"
             android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:layout_marginTop="16dp"
-            android:background="@android:color/darker_gray"
+            android:layout_height="0dp"
+            android:layout_marginBottom="24dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@+id/btn_form_next"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_form_cashOut_stepperTitle" />
-
-        <EditText
-            android:id="@+id/tv_form_cashOut_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:background="@drawable/txt_form"
-            android:ems="10"
-            android:hint="Insert Title"
-            android:inputType="numberDecimal"
-            android:paddingLeft="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view_form_cashOut_defider" />
-
-        <EditText
-            android:id="@+id/tv_form_cashOut_date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/txt_form"
-            android:ems="10"
-            android:hint="Adjust Date"
-            android:inputType="numberDecimal"
-            android:paddingLeft="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_form_cashOut_title" />
-
-        <EditText
-            android:id="@+id/tv_form_cashOut_account"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/txt_form"
-            android:ems="10"
-            android:hint="Select Account"
-            android:inputType="numberDecimal"
-            android:paddingLeft="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_form_cashOut_date" />
-
-
-        <EditText
-            android:id="@+id/tv_form_cashOut_to"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/txt_form"
-            android:ems="10"
-            android:hint="From"
-            android:inputType="textLongMessage"
-            android:paddingLeft="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_form_cashOut_account" />
-
-
-        <EditText
-            android:id="@+id/tv_form_cashOut_amount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="192dp"
-            android:background="@drawable/txt_form"
-            android:ems="10"
-            android:hint="Insert Amount"
-            android:inputType="textLongMessage"
-            android:paddingLeft="20dp"
-            app:layout_constraintBottom_toTopOf="@+id/btn_form_cashOut_next"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_form_cashOut_to" />
-
-        <Button
-            android:id="@+id/btn_form_cashOut_next"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:background="@drawable/all_bg_box_blue"
-            android:text="SAVE"
-            android:textColor="@color/colorWhite"
-            android:textSize="16dp"
-            app:layout_constraintEnd_toEndOf="@+id/tv_form_cashOut_amount"
-            app:layout_constraintStart_toStartOf="@+id/tv_form_cashOut_amount"
-            app:layout_constraintTop_toBottomOf="@+id/tv_form_cashOut_amount" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-<!--    Form Debt layout-->
-
-    <!--    Form loan layout-->
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constrain_form_debt_layerInherit"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/all_bg_rounded_white"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_form_barTitle"
-        app:layout_constraintVertical_bias="0.0"
-        tools:layout_editor_absoluteX="112dp">
-
-        <TextView
-            android:id="@+id/tv_form_debt_stepperTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:fontFamily="@font/roboto_regular"
-            android:gravity="center"
-            android:text="DEBT"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toTopOf="@id/view_form_debt_defider"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/constrain_form_debt_layerInherit" />
-
-        <View
-            android:id="@+id/view_form_debt_defider"
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:layout_marginTop="16dp"
-            android:background="@android:color/darker_gray"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_form_debt_stepperTitle" />
-
-        <EditText
-            android:id="@+id/tv_form_debt_date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:background="@drawable/txt_form"
-            android:ems="10"
-            android:hint="Adjust Date"
-            android:inputType="numberDecimal"
-            android:paddingLeft="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view_form_debt_defider" />
-
-        <EditText
-            android:id="@+id/tv_form_debt_from"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/txt_form"
-            android:ems="10"
-            android:hint="From"
-            android:inputType="numberDecimal"
-            android:paddingLeft="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_form_debt_date" />
-
-        <EditText
-            android:id="@+id/tv_form_debt_account"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/txt_form"
-            android:ems="10"
-            android:hint="Select Account"
-            android:inputType="numberDecimal"
-            android:paddingLeft="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_form_debt_from" />
-
-
-        <EditText
-            android:id="@+id/tv_form_debt_amount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/txt_form"
-            android:ems="10"
-            android:hint="Insert Amount"
-            android:inputType="textLongMessage"
-            android:paddingLeft="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_form_debt_account" />
-
-
-        <EditText
-            android:id="@+id/tv_form_debt_due_date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/txt_form"
-            android:ems="10"
-            android:hint="Due Date"
-            android:inputType="textLongMessage"
-            android:paddingLeft="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_form_debt_amount" />
-
-        <EditText
-            android:id="@+id/tv_form_debt_description"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/txt_form"
-            android:ems="10"
-            android:hint="Description"
-            android:inputType="textLongMessage"
-            android:paddingLeft="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_form_debt_due_date" />
-
-        <Button
-            android:id="@+id/btn_form_debt_next"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:layout_marginBottom="106dp"
-            android:background="@drawable/all_bg_box_blue"
-            android:text="SAVE"
-            android:textColor="@color/colorWhite"
-            android:textSize="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/tv_form_debt_description"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/tv_form_debt_description"
-            app:layout_constraintTop_toBottomOf="@+id/tv_form_debt_description" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintGuide_begin="599dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_form_debt_next" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constrain_form_loan_layerInherit"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/all_bg_rounded_white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_form_barTitle"
-        tools:layout_editor_absoluteX="16dp"
-        android:visibility="gone">
-
-        <TextView
-            android:id="@+id/tv_form_loan_stepperTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:fontFamily="@font/roboto_regular"
-            android:gravity="center"
-            android:text="LOAN"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toTopOf="@id/view_form_loan_defider"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/constrain_form_loan_layerInherit" />
-
-        <View
-            android:id="@+id/view_form_loan_defider"
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:layout_marginTop="16dp"
-            android:background="@android:color/darker_gray"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_form_loan_stepperTitle" />
-
-        <EditText
-            android:id="@+id/tv_form_loan_date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:background="@drawable/txt_form"
-            android:ems="10"
-            android:hint="Adjust Date"
-            android:inputType="numberDecimal"
-            android:paddingLeft="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view_form_loan_defider" />
-
-        <EditText
-            android:id="@+id/tv_form_loan_to"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/txt_form"
-            android:ems="10"
-            android:hint="To"
-            android:inputType="numberDecimal"
-            android:paddingLeft="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_form_loan_date" />
-
-        <EditText
-            android:id="@+id/tv_form_loan_account"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/txt_form"
-            android:ems="10"
-            android:hint="Select Account"
-            android:inputType="numberDecimal"
-            android:paddingLeft="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_form_loan_to" />
+            app:layout_constraintTop_toBottomOf="@+id/view_form_defider">
 
 
-        <EditText
-            android:id="@+id/tv_form_loan_amount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/txt_form"
-            android:ems="10"
-            android:hint="Insert Amount"
-            android:inputType="textLongMessage"
-            android:paddingLeft="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_form_loan_account" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constrain_form_transaction"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/scrollview_form_transaction">
 
 
-        <EditText
-            android:id="@+id/tv_form_loan_due_date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/txt_form"
-            android:ems="10"
-            android:hint="Due Date"
-            android:inputType="textLongMessage"
-            android:paddingLeft="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_form_loan_amount" />
+                <EditText
+                    android:id="@+id/tv_form_cashIn_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/txt_form"
+                    android:ems="10"
+                    android:hint="Insert Title"
+                    android:inputType="numberDecimal"
+                    android:paddingLeft="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/group_form_cash_in" />
 
-        <EditText
-            android:id="@+id/tv_form_loan_description"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/txt_form"
-            android:ems="10"
-            android:hint="Description"
-            android:inputType="textLongMessage"
-            android:paddingLeft="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_form_loan_due_date" />
+                <EditText
+                    android:id="@+id/tv_form_cashIn_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/txt_form"
+                    android:ems="10"
+                    android:hint="Adjust Date"
+                    android:inputType="numberDecimal"
+                    android:paddingLeft="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_form_cashIn_title" />
+
+                <EditText
+                    android:id="@+id/tv_form_cashIn_account"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/txt_form"
+                    android:ems="10"
+                    android:hint="Select Account"
+                    android:inputType="numberDecimal"
+                    android:paddingLeft="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_form_cashIn_date" />
+
+                <EditText
+                    android:id="@+id/tv_form_cashIn_to"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/txt_form"
+                    android:ems="10"
+                    android:hint="To"
+                    android:inputType="textLongMessage"
+                    android:paddingLeft="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_form_cashIn_account" />
+
+                <EditText
+                    android:id="@+id/tv_form_cashIn_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="64dp"
+                    android:background="@drawable/txt_form"
+                    android:ems="10"
+                    android:hint="Insert Amount"
+                    android:inputType="textLongMessage"
+                    android:paddingLeft="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_form_cashIn_to" />
+
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/group_form_cash_in"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    app:constraint_referenced_ids="tv_form_cashIn_title,tv_form_cashIn_date,tv_form_cashIn_account,tv_form_cashIn_to,tv_form_cashIn_amount"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/tv_form_cashOut_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/txt_form"
+                    android:ems="10"
+                    android:hint="Insert Title"
+                    android:inputType="numberDecimal"
+                    android:paddingLeft="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/group_form_cashOut" />
+
+                <EditText
+                    android:id="@+id/tv_form_cashOut_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/txt_form"
+                    android:ems="10"
+                    android:hint="Adjust Date"
+                    android:inputType="numberDecimal"
+                    android:paddingLeft="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_form_cashOut_title" />
+
+                <EditText
+                    android:id="@+id/tv_form_cashOut_account"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/txt_form"
+                    android:ems="10"
+                    android:hint="Select Account"
+                    android:inputType="numberDecimal"
+                    android:paddingLeft="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_form_cashOut_date" />
+
+
+                <EditText
+                    android:id="@+id/tv_form_cashOut_to"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/txt_form"
+                    android:ems="10"
+                    android:hint="From"
+                    android:inputType="textLongMessage"
+                    android:paddingLeft="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_form_cashOut_account" />
+
+
+                <EditText
+                    android:id="@+id/tv_form_cashOut_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="64dp"
+                    android:background="@drawable/txt_form"
+                    android:ems="10"
+                    android:hint="Insert Amount"
+                    android:inputType="textLongMessage"
+                    android:paddingLeft="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_form_cashOut_to" />
+
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/group_form_cashOut"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:constraint_referenced_ids="tv_form_cashOut_amount,tv_form_cashOut_title,tv_form_cashOut_account,tv_form_cashOut_to,tv_form_cashOut_date"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/tv_form_debt_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/txt_form"
+                    android:ems="10"
+                    android:hint="Adjust Date"
+                    android:inputType="numberDecimal"
+                    android:paddingLeft="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/group_form_debt" />
+
+                <EditText
+                    android:id="@+id/tv_form_debt_from"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/txt_form"
+                    android:ems="10"
+                    android:hint="From"
+                    android:inputType="numberDecimal"
+                    android:paddingLeft="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_form_debt_date" />
+
+                <EditText
+                    android:id="@+id/tv_form_debt_account"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/txt_form"
+                    android:ems="10"
+                    android:hint="Select Account"
+                    android:inputType="numberDecimal"
+                    android:paddingLeft="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_form_debt_from" />
+
+
+                <EditText
+                    android:id="@+id/tv_form_debt_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/txt_form"
+                    android:ems="10"
+                    android:hint="Insert Amount"
+                    android:inputType="textLongMessage"
+                    android:paddingLeft="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_form_debt_account" />
+
+
+                <EditText
+                    android:id="@+id/tv_form_debt_due_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/txt_form"
+                    android:ems="10"
+                    android:hint="Due Date"
+                    android:inputType="textLongMessage"
+                    android:paddingLeft="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_form_debt_amount" />
+
+                <EditText
+                    android:id="@+id/tv_form_debt_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="64dp"
+                    android:background="@drawable/txt_form"
+                    android:ems="10"
+                    android:hint="Description"
+                    android:inputType="textLongMessage"
+                    android:paddingLeft="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_form_debt_due_date" />
+
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/group_form_debt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:constraint_referenced_ids="tv_form_debt_date,tv_form_debt_amount,tv_form_debt_account,tv_form_debt_due_date,tv_form_debt_from,tv_form_debt_description"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/tv_form_loan_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/txt_form"
+                    android:ems="10"
+                    android:hint="Adjust Date"
+                    android:inputType="numberDecimal"
+                    android:paddingLeft="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/group_form_loan" />
+
+                <EditText
+                    android:id="@+id/tv_form_loan_to"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/txt_form"
+                    android:ems="10"
+                    android:hint="To"
+                    android:inputType="numberDecimal"
+                    android:paddingLeft="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_form_loan_date" />
+
+                <EditText
+                    android:id="@+id/tv_form_loan_account"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/txt_form"
+                    android:ems="10"
+                    android:hint="Select Account"
+                    android:inputType="numberDecimal"
+                    android:paddingLeft="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_form_loan_to" />
+
+
+                <EditText
+                    android:id="@+id/tv_form_loan_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/txt_form"
+                    android:ems="10"
+                    android:hint="Insert Amount"
+                    android:inputType="textLongMessage"
+                    android:paddingLeft="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_form_loan_account" />
+
+
+                <EditText
+                    android:id="@+id/tv_form_loan_due_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/txt_form"
+                    android:ems="10"
+                    android:hint="Due Date"
+                    android:inputType="textLongMessage"
+                    android:paddingLeft="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_form_loan_amount" />
+
+                <EditText
+                    android:id="@+id/tv_form_loan_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="64dp"
+                    android:background="@drawable/txt_form"
+                    android:ems="10"
+                    android:hint="Description"
+                    android:inputType="textLongMessage"
+                    android:paddingLeft="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_form_loan_due_date" />
+
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/group_form_loan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:constraint_referenced_ids="tv_form_loan_to,tv_form_loan_description,tv_form_loan_date,tv_form_loan_due_date,tv_form_loan_account,tv_form_loan_amount"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
 
         <Button
-            android:id="@+id/btn_form_loan_next"
+            android:id="@+id/btn_form_next"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:layout_marginBottom="90dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="24dp"
             android:background="@drawable/all_bg_box_blue"
             android:text="SAVE"
             android:textColor="@color/colorWhite"
-            android:textSize="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/tv_form_loan_description"
-            app:layout_constraintStart_toStartOf="@+id/tv_form_loan_description"
-            app:layout_constraintTop_toBottomOf="@+id/tv_form_loan_description" />
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/constrain_form_layerInherit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
