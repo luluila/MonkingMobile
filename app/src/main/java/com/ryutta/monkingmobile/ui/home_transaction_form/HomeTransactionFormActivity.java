@@ -98,4 +98,8 @@ public class HomeTransactionFormActivity extends AppCompatActivity implements Vi
                 return false;
         }
     }
+
+    void addCashIn(){
+
+    }
 }

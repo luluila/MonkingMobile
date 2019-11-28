@@ -70,21 +70,22 @@ public interface IApiEndpoint {
             @Field("name") String accountName
     );
 
+    @FormUrlEncoded
     @POST("createCashIn")
     Call<ResponseTransaction> createCashIn(
             @Field("title") String transTitle,
             @Field("first_account") String firstAccount,
             @Field("second_account") String secondAccount,
-            @Field("amount") double amount,
+            @Field("amount") String amount,
             @Field("date") String date
     );
 
     @POST("createCashOut")
     Call<ResponseTransaction> createCashOut(
             @Field("title") String title,
-            @Field("first_account") int firstAccount,
-            @Field("second_account") int secondAccount,
-            @Field("amount") double amount
+            @Field("first_account") String firstAccount,
+            @Field("second_account") String secondAccount,
+            @Field("amount") String amount
     );
 
     @POST("createDebt")
@@ -92,8 +93,8 @@ public interface IApiEndpoint {
             @Field("title") String title,
             @Field("first_account") String firstAccount,
             @Field("second_account") String secondAccount,
-            @Field("amount") double amount,
-            @Field("person_name") String personName,
+            @Field("amount") String amount,
+            @Field("person_name") int personName,
             @Field("due_date") String dueDate
     );
 
