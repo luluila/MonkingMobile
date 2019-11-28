@@ -3,6 +3,7 @@ package com.ryutta.monkingmobile.ui.home_transaction_form;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.PopupMenu;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.constraintlayout.widget.Group;
 import androidx.core.widget.NestedScrollView;
 
 import android.os.Bundle;
@@ -10,16 +11,18 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ryutta.monkingmobile.R;
 
 public class HomeTransactionFormActivity extends AppCompatActivity implements View.OnClickListener, PopupMenu.OnMenuItemClickListener {
 
-    ConstraintLayout cashInLayout;
-    ConstraintLayout cashOutLayout;
-    ConstraintLayout debtLayout;
-    ConstraintLayout loanLayout;
+    Group cashInLayout;
+    Group cashOutLayout;
+    Group debtLayout;
+    Group loanLayout;
+    TextView formTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,12 +35,13 @@ public class HomeTransactionFormActivity extends AppCompatActivity implements Vi
         ImageView backButton = findViewById(R.id.iv_form_back);
         backButton.setOnClickListener(this);
 
-        cashInLayout = findViewById(R.id.constrain_form_cashIn_layerInherit);
-        cashOutLayout = findViewById(R.id.constrain_form_cashOut_layerInherit);
-        debtLayout = findViewById(R.id.constrain_form_debt_layerInherit);
-        loanLayout = findViewById(R.id.constrain_form_loan_layerInherit);
-    }
+        cashInLayout = findViewById(R.id.group_form_cash_in);
+        cashOutLayout = findViewById(R.id.group_form_cashOut);
+        debtLayout = findViewById(R.id.group_form_debt);
+        loanLayout = findViewById(R.id.group_form_loan);
 
+        formTitle = findViewById(R.id.tv_form_formTitle);
+    }
 
 
     @Override
@@ -59,6 +63,7 @@ public class HomeTransactionFormActivity extends AppCompatActivity implements Vi
     public boolean onMenuItemClick(MenuItem item) {
         switch (item.getItemId()){
             case R.id.transaction_form_cash_in:
+                formTitle.setText("CASH IN");
                 cashInLayout.setVisibility(View.VISIBLE);
                 cashOutLayout.setVisibility(View.GONE);
                 debtLayout.setVisibility(View.GONE);
@@ -66,29 +71,31 @@ public class HomeTransactionFormActivity extends AppCompatActivity implements Vi
 
                 return true;
             case R.id.transaction_form_cash_out:
+                formTitle.setText("CASH OUT");
                 cashInLayout.setVisibility(View.GONE);
                 cashOutLayout.setVisibility(View.VISIBLE);
                 debtLayout.setVisibility(View.GONE);
                 loanLayout.setVisibility(View.GONE);
+
                 return true;
             case R.id.transaction_form_debt:
+                formTitle.setText("DEBT");
                 cashInLayout.setVisibility(View.GONE);
                 cashOutLayout.setVisibility(View.GONE);
                 debtLayout.setVisibility(View.VISIBLE);
                 loanLayout.setVisibility(View.GONE);
+
                 return true;
             case R.id.transaction_form_loan:
+                formTitle.setText("LOAN");
                 cashInLayout.setVisibility(View.GONE);
                 cashOutLayout.setVisibility(View.GONE);
                 debtLayout.setVisibility(View.GONE);
                 loanLayout.setVisibility(View.VISIBLE);
+
                 return true;
             default:
                 return false;
         }
-    }
-
-    public void setVisibility(){
-
     }
 }
