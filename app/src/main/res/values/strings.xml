@@ -28,6 +28,8 @@
     <string name="business_targetProfit">Target Profit</string>
     <string name="business_profitValue">628,000</string>
     <string name="business_targetReached">Target Reached</string>
+    <string name="business_targetCost">Target Cost</string>
+    <string name="business_costValue">628,000</string>
     <string name="business_reachedValue">478,000</string>
     <string name="business_status">STATUS</string>
 
