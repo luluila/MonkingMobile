@@ -6,13 +6,12 @@ import android.util.Log;
 
 import com.ryutta.monkingmobile.data.remote.api.ApiRetrofit;
 import com.ryutta.monkingmobile.data.remote.api.IApiEndpoint;
+import com.ryutta.monkingmobile.model.User;
 import com.ryutta.monkingmobile.model.respon.ResponseLogin;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-
-import static com.ryutta.monkingmobile.utils.SharedPrefUtils.getSharedPreferences;
 
 public class LoginPresenter {
     private static final String BEARER_TOKEN_PREFIX = "Bearer ";
@@ -26,34 +25,31 @@ public class LoginPresenter {
     }
 
     void doLogin(String email, String password){
-        IApiEndpoint apiEndpoint = ApiRetrofit.getInstance().create(IApiEndpoint.class);
+        Call<ResponseLogin> call = ApiRetrofit.getInstance()
+                .getApi()
+                .login(email, password);
 
 
-        apiEndpoint.login(email,password).enqueue(new Callback<ResponseLogin>() {
+        call.enqueue(new Callback<ResponseLogin>() {
             @Override
             public void onResponse(Call<ResponseLogin> call, Response<ResponseLogin> response) {
-                String token = BEARER_TOKEN_PREFIX+ new ResponseLogin().getToken();
-                Log.d("debug : ", "OK");
-                Log.d("token",token );
-                view.moveIntoMain();
+                if (response.isSuccessful()){
 
-                savePreference(token);
+                    String s = response.body().getToken();
+                    Log.d("LOGIN","SUCCES");
+                    view.moveIntoMain();
+                    String token = response.body().getToken();
+                    Log.d("token", "onResponse: "+token);
+                } else {
+                    Log.d("ERROR_CODE", "error");
+                }
             }
 
             @Override
             public void onFailure(Call<ResponseLogin> call, Throwable t) {
-                Log.e("onFailure : ", "Errorr");
+                Log.e("LOGIN", "LOGIN ERROR: true");
             }
         });
     }
 
-    void savePreference(String token){
-        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREF_LOGIN, "");
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-
-        editor.putString(SHARED_PREF_USER_TOKEN, token);
-        editor.putBoolean(SHARED_PREF_LOGIN, true);
-
-        editor.apply();
-    }
 }

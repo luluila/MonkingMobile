@@ -1,10 +1,13 @@
 package com.ryutta.monkingmobile.ui.sign_up;
 
 import android.util.Log;
+import android.widget.Toast;
 
 import com.ryutta.monkingmobile.data.remote.api.ApiRetrofit;
 import com.ryutta.monkingmobile.data.remote.api.IApiEndpoint;
 import com.ryutta.monkingmobile.model.respon.ResponseSignup;
+
+import java.io.IOException;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -18,22 +21,37 @@ public class SignUpPresenter {
         this.view = signUp;
     }
 
-    void doSignUp(String email, String password, String rewPassword){
-        if (password.equals(rewPassword)){
-            IApiEndpoint apiEndpoint = ApiRetrofit.getInstance().create(IApiEndpoint.class);
-            apiEndpoint.signup(email, password, rewPassword).enqueue(new Callback<ResponseSignup>() {
-                @Override
-                public void onResponse(Call<ResponseSignup> call, Response<ResponseSignup> response) {
-                    view.moveToLogin();
-                    Log.d("success", "success sign up");
-                    Log.d("token", new ResponseSignup().getToken());
-                }
+    void doSignUp(String name, String email, String password){
+        Log.d("password", password);
+        Call<ResponseSignup> call = ApiRetrofit.getInstance()
+                .getApi()
+                .signup(name, email, password);
 
-                @Override
-                public void onFailure(Call<ResponseSignup> call, Throwable t) {
-                    Log.e("error", "cannot sign up");
+        call.enqueue(new Callback<ResponseSignup>() {
+            @Override
+            public void onResponse(Call<ResponseSignup> call, Response<ResponseSignup> response) {
+                String s = response.body().toString();
+                Log.d("RESPONSE BODY", s);
+                if (response.isSuccessful()){
+                    Log.d("success", "success sign up");
+                    view.moveToLogin();
+                } else{
+                    String error = null;
+                    try {
+                        error = response.errorBody().string();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    Log.e("Error", error);
                 }
-            });
-        }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseSignup> call, Throwable t) {
+                Log.e("error", "cannot sign up trowable error");
+                Log.e("TROWABLE", "onFailure: ");
+            }
+        });
+
     }
 }

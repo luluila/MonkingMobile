@@ -7,7 +7,7 @@ public class SharedPrefUtils {
     private static SharedPreferences sharedPreferences;
     private static SharedPreferences.Editor editor;
 
-    private  static void initSharedPref(String namaPref, Context context){
+    private static void initSharedPref(String namaPref, Context context){
         sharedPreferences = context.getSharedPreferences(namaPref, Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
     }

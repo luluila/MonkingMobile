@@ -25,8 +25,9 @@ public interface IApiEndpoint {
     Call<ResponseLogin> login(
         @Field("email") String emailUser,
         @Field("password") String passwordUser
-        );
+    );
 
+    @FormUrlEncoded
     @POST("auth/signup")
     Call<ResponseSignup> signup(
             @Field("name") String userName,
@@ -36,7 +37,6 @@ public interface IApiEndpoint {
 
     @GET("auth/user")
     Call<ResponseUser> getUser(
-
     );
 
     @POST("company")

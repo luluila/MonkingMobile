@@ -44,8 +44,8 @@
             android:id="@+id/et_email_sign_up"
             android:layout_width="355dp"
             android:layout_height="wrap_content"
-            android:hint="Email"
-            android:inputType="textEmailAddress"
+            android:hint="Name"
+            android:inputType="text"
             android:textColor="@color/colorWhite"
             android:theme="@style/LoginEditLayout" />
 
@@ -70,8 +70,8 @@
             android:id="@+id/et_password_sign_up"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Password"
-            android:inputType="textPassword"
+            android:hint="Email"
+            android:inputType="text"
             android:textColor="@color/colorWhite"
             android:theme="@style/LoginEditLayout" />
 
@@ -96,7 +96,7 @@
             android:id="@+id/et_re_password_sign_up"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Rewrite Password"
+            android:hint="Password"
             android:inputType="textPassword"
             android:textColor="@color/colorWhite"
             android:theme="@style/LoginEditLayout" />
