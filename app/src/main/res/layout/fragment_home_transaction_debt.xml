@@ -10,16 +10,15 @@
     app:layout_constraintTop_toTopOf="parent"
     tools:context=".ui.home_transaction_debt.HomeTransactionDebtFragment">
 
-    <ImageView
-        android:id="@+id/iv_debt_back"
+    <ImageButton
+        android:id="@+id/ib_debt_back"
         android:layout_width="wrap_content"
         android:layout_height="28dp"
         android:layout_marginStart="16dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
         android:contentDescription="@string/all_backButton"
         android:src="@drawable/all_ic_back_small"
-        android:background="?attr/selectableItemBackgroundBorderless"
         app:layout_constraintBottom_toBottomOf="@+id/tv_debt_barTitle"
-        app:layout_constraintEnd_toStartOf="@+id/tv_debt_barTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tv_debt_barTitle" />
 
@@ -44,7 +43,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/iv_debt_option"
+        android:id="@+id/ib_debt_option"
         android:layout_width="wrap_content"
         android:layout_height="28dp"
         android:layout_marginEnd="16dp"
