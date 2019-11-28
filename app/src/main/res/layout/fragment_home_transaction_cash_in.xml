@@ -5,7 +5,6 @@
     android:id="@+id/constrain_cash_in_layerParent"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBlueDark"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintTop_toTopOf="parent"
     tools:context=".ui.home_transaction_cash_in.HomeTransactionCashInFragment">
