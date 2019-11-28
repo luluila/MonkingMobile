@@ -38,9 +38,6 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"/>
-        <action
-            android:id="@+id/action_navigation_home_to_homeTransactionFormCashInFragment"
-            app:destination="@id/homeTransactionFormCashInFragment" />
     </fragment>
 
     <fragment
@@ -49,8 +46,8 @@
         android:label="@string/business_barTitle"
         tools:layout="@layout/fragment_business">
         <action
-            android:id="@+id/action_navigation_business_to_businessHistoryFragment"
-            app:destination="@id/businessHistoryFragment" />
+            android:id="@+id/action_navigation_business_to_businessCostFragment"
+            app:destination="@id/businessCostFragment" />
     </fragment>
 
     <fragment
@@ -74,18 +71,13 @@
 
     <fragment
         android:id="@+id/navigation_more"
-        android:name="com.ryutta.monkingmobile.ui.notifications.NotificationsFragment"
+        android:name="com.ryutta.monkingmobile.ui.more.MoreFragment"
         android:label="@string/more_barTitle"
         tools:layout="@layout/fragment_more">
         <action
             android:id="@+id/action_navigation_more_to_moreSettingFragment"
             app:destination="@id/moreSettingFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/businessHistoryFragment"
-        android:name="com.ryutta.monkingmobile.ui.business_history.BusinessHistoryFragment"
-        android:label="fragment_business_history"
-        tools:layout="@layout/fragment_business_history"/>
     <fragment
         android:id="@+id/homeTransactionCashInFragment"
         android:name="com.ryutta.monkingmobile.ui.home_transaction_cash_in.HomeTransactionCashInFragment"
@@ -139,33 +131,8 @@
         android:label="fragment_more_business_profile"
         tools:layout="@layout/fragment_more_business_profile"/>
     <fragment
-        android:id="@+id/homeTransactionFormCashOutFragment"
-        android:name="com.ryutta.monkingmobile.ui.home_transaction_form_cash_out.HomeTransactionFormCashOutFragment"
-        android:label="fragment_home_transaction_form_cash_out"
-        tools:layout="@layout/fragment_home_transaction_form_cash_out" />
-    <fragment
-        android:id="@+id/homeTransactionFormDebtFragment"
-        android:name="com.ryutta.monkingmobile.ui.home_transaction_form_debt.HomeTransactionFormDebtFragment"
-        android:label="fragment_home_transaction_form_debt"
-        tools:layout="@layout/fragment_home_transaction_form_debt" />
-    <fragment
-        android:id="@+id/homeTransactionFormLoanFragment"
-        android:name="com.ryutta.monkingmobile.ui.home_transaction_form_loan.HomeTransactionFormLoanFragment"
-        android:label="fragment_home_transaction_form_loan"
-        tools:layout="@layout/fragment_home_transaction_form_loan" />
-    <fragment
-        android:id="@+id/homeTransactionFormCashInFragment"
-        android:name="com.ryutta.monkingmobile.ui.home_transaction_form_cash_in.HomeTransactionFormCashInFragment"
-        android:label="fragment_home_transaction_form_cash_in"
-        tools:layout="@layout/fragment_home_transaction_form_cash_in" >
-        <action
-            android:id="@+id/action_homeTransactionFormCashInFragment_to_homeTransactionFormCashOutFragment"
-            app:destination="@id/homeTransactionFormCashOutFragment" />
-        <action
-            android:id="@+id/action_homeTransactionFormCashInFragment_to_homeTransactionFormLoanFragment"
-            app:destination="@id/homeTransactionFormLoanFragment" />
-        <action
-            android:id="@+id/action_homeTransactionFormCashInFragment_to_homeTransactionFormDebtFragment"
-            app:destination="@id/homeTransactionFormDebtFragment" />
-    </fragment>
+        android:id="@+id/businessCostFragment"
+        android:name="com.ryutta.monkingmobile.ui.business_cost.BusinessCostFragment"
+        android:label="fragment_business_cost"
+        tools:layout="@layout/fragment_business_cost" />
 </navigation>
