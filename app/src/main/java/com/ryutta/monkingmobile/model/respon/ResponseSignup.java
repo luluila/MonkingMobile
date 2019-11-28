@@ -3,25 +3,14 @@ package com.ryutta.monkingmobile.model.respon;
 import com.google.gson.annotations.SerializedName;
 
 public class ResponseSignup {
-    @SerializedName("token")
-    private String token;
+    @SerializedName("api_token")
+    private UserToken token;
 
-    @SerializedName("name")
-    private String userName;
-
-    public String getToken() {
+    public UserToken getToken() {
         return token;
     }
 
-    public void setToken(String token) {
+    public void setToken(UserToken token) {
         this.token = token;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
     }
 }

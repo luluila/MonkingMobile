@@ -16,9 +16,11 @@
         <activity android:name=".ui.stepper_business_field.StepperBusinessFieldActivity" />
         <activity android:name=".ui.stepper_business_finance.StepperBusinessFinanceActivity" />
         <activity android:name=".ui.stepper_business_info.StepperBusinessInfoActivity" />
+
         <activity android:name=".ui.sign_up.SignUpActivity"/>
         <activity android:name=".ui.reset_password.ResetPasswordActivity"/>
         <activity android:name=".ui.login.LoginActivity"/>
+      
         <activity
             android:name=".SplashActivity"
             android:theme="@style/SplashTheme">
@@ -28,7 +30,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".ui.main.MainActivity" />
+        <activity android:name=".ui.login.LoginActivity"/>
     </application>
 
 </manifest>

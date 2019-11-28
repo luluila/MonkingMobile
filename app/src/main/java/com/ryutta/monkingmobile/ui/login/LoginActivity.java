@@ -6,7 +6,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.ryutta.monkingmobile.MainActivity;
+import com.ryutta.monkingmobile.ui.main.MainActivity;
 import com.ryutta.monkingmobile.R;
 import com.ryutta.monkingmobile.base.BaseActivity;
 import com.ryutta.monkingmobile.ui.reset_password.ResetPasswordActivity;

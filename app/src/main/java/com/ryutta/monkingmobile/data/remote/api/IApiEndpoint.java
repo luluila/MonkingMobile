@@ -21,22 +21,22 @@ import retrofit2.http.PUT;
 public interface IApiEndpoint {
 
     @FormUrlEncoded
-    @POST("login")
+    @POST("auth/login")
     Call<ResponseLogin> login(
         @Field("email") String emailUser,
         @Field("password") String passwordUser
-        );
+    );
 
-    @POST("signup")
+    @FormUrlEncoded
+    @POST("auth/signup")
     Call<ResponseSignup> signup(
             @Field("name") String userName,
             @Field("email") String emailUser,
             @Field("password") String password
     );
 
-    @GET("user")
+    @GET("auth/user")
     Call<ResponseUser> getUser(
-
     );
 
     @POST("company")

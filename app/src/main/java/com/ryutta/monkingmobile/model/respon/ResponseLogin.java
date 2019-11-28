@@ -3,6 +3,7 @@ package com.ryutta.monkingmobile.model.respon;
 import com.google.gson.annotations.SerializedName;
 import com.ryutta.monkingmobile.model.User;
 
+
 public class ResponseLogin {
 
     @SerializedName("api_token")
