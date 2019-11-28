@@ -4,11 +4,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/business_detail_running"
-        android:title="Running"
+        android:id="@+id/business_detail_cost_running"
+        android:title="Cost Running"
         app:showAsAction="never"/>
     <item
-        android:id="@+id/business_detail_history"
-        android:title="History"
+        android:id="@+id/business_detail_cost_history"
+        android:title="Cost History"
         app:showAsAction="never"/>
 </menu>

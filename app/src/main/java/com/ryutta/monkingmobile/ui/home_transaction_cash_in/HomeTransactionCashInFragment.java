@@ -39,20 +39,20 @@ public class HomeTransactionCashInFragment extends Fragment implements View.OnCl
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         navController = Navigation.findNavController(view);
-        view.findViewById(R.id.iv_cashIn_option).setOnClickListener(this);
-        view.findViewById(R.id.iv_cashIn_back).setOnClickListener(this);
+        view.findViewById(R.id.ib_cashIn_option).setOnClickListener(this);
+        view.findViewById(R.id.ib_cashIn_back).setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.iv_cashIn_option:
+            case R.id.ib_cashIn_option:
                 PopupMenu popupMenu = new PopupMenu(view.getContext(), view);
                 popupMenu.setOnMenuItemClickListener(this);
                 popupMenu.inflate(R.menu.transaction_detail_menu);
                 popupMenu.show();
                 break;
-            case R.id.iv_cashIn_back:
+            case R.id.ib_cashIn_back:
                 getActivity().onBackPressed();
                 break;
         }

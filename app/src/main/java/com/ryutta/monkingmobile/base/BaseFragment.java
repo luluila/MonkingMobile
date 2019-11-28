@@ -1,6 +1,9 @@
 package com.ryutta.monkingmobile.base;
 
 import android.os.Bundle;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.PopupMenu;
 import android.widget.ProgressBar;
 
 import androidx.annotation.Nullable;
@@ -15,4 +18,5 @@ public class BaseFragment extends Fragment {
         super.onCreate(savedInstanceState);
         progressBar = new ProgressBar(getContext());
     }
+
 }

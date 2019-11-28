@@ -10,15 +10,15 @@
     app:layout_constraintTop_toTopOf="parent"
     tools:context=".ui.home_transaction_cash_out.HomeTransactionCashOutFragment">
 
-    <ImageView
-        android:id="@+id/iv_cashOut_back"
+    <ImageButton
+        android:id="@+id/ib_cashOut_back"
         android:layout_width="wrap_content"
         android:layout_height="28dp"
         android:layout_marginStart="16dp"
         android:contentDescription="@string/all_backButton"
+        android:background="?attr/selectableItemBackgroundBorderless"
         android:src="@drawable/all_ic_back_small"
         app:layout_constraintBottom_toBottomOf="@+id/tv_cash_out_barTitle"
-        app:layout_constraintEnd_toStartOf="@+id/tv_cash_out_barTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tv_cash_out_barTitle" />
 
@@ -42,12 +42,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/iv_cashOut_option"
+    <ImageButton
+        android:id="@+id/ib_cashOut_option"
         android:layout_width="wrap_content"
         android:layout_height="28dp"
         android:layout_marginEnd="16dp"
-        android:background="@drawable/all_ic_option_white"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/all_ic_option_white"
         app:layout_constraintBottom_toBottomOf="@+id/tv_cash_out_barTitle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tv_cash_out_barTitle" />

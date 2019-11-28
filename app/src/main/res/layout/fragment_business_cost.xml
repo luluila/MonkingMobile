@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/constrain_business_profit_layerParent"
+    android:id="@+id/constrain_business_cost_layerParent"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:foreground="?android:attr/selectableItemBackground"
@@ -10,7 +10,7 @@
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
-    tools:context=".ui.business.BusinessFragment">
+    tools:context=".ui.business_cost.BusinessCostFragment">
 
     <TextView
         android:id="@+id/tv_business_barTitle"
@@ -41,9 +41,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tv_business_barTitle" />
 
-    <!--    Running Profit Layout-->
+    <!--    Running Cost Layout-->
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constrain_business_profit_running_layerInherit"
+        android:id="@+id/constrain_business_cost_running_layerInherit"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="24dp"
@@ -55,90 +55,89 @@
         app:layout_constraintTop_toBottomOf="@id/tv_business_barTitle">
 
         <TextView
-            android:id="@+id/tv_business_profit_businessTitle"
+            android:id="@+id/tv_business_cost_businessTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/roboto_regular"
             android:gravity="center"
-            android:text="PROFIT RUNNING"
+            android:text="COST RUNNING"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/constrain_business_profit_running_layerInherit" />
+            app:layout_constraintTop_toTopOf="@+id/constrain_business_cost_running_layerInherit" />
 
         <ImageButton
-            android:id="@+id/ib_profit_option"
+            android:id="@+id/ib_cost_option"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/all_ic_option_black"
-            app:layout_constraintBottom_toBottomOf="@+id/tv_business_profit_businessTitle"
+            android:background="@drawable/all_ic_option_black"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_business_cost_businessTitle"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/tv_business_profit_businessTitle"
+            app:layout_constraintTop_toTopOf="@+id/tv_business_cost_businessTitle"
             app:layout_constraintVertical_bias="0.533" />
 
         <View
-            android:id="@+id/view_business_profit_defider"
+            android:id="@+id/view_business_cost_defider"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:layout_marginTop="16dp"
             android:background="@android:color/darker_gray"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_business_profit_businessTitle" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_business_cost_businessTitle" />
 
         <TextView
-            android:id="@+id/tv_business_profit_running_startDate"
+            android:id="@+id/tv_business_cost_running_startDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text=" Jan 10, 2017"
-            app:layout_constraintEnd_toStartOf="@+id/tv_business_profit_running_to"
+            app:layout_constraintEnd_toStartOf="@+id/tv_business_cost_running_to"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view_business_profit_defider" />
+            app:layout_constraintTop_toBottomOf="@+id/view_business_cost_defider" />
 
         <TextView
-            android:id="@+id/tv_business_profit_running_endDate"
+            android:id="@+id/tv_business_cost_running_endDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Sep 10, 2017"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/tv_business_profit_running_to"
-            app:layout_constraintTop_toTopOf="@+id/tv_business_profit_running_to" />
+            app:layout_constraintStart_toEndOf="@+id/tv_business_cost_running_to"
+            app:layout_constraintTop_toTopOf="@+id/tv_business_cost_running_to" />
 
         <TextView
-            android:id="@+id/tv_business_profit_running_to"
+            android:id="@+id/tv_business_cost_running_to"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="32dp"
             android:text="To"
-            app:layout_constraintBottom_toTopOf="@+id/tv_business_profit_running_chart"
+            app:layout_constraintBottom_toTopOf="@+id/tv_business_cost_running_chart"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view_business_profit_defider" />
+            app:layout_constraintTop_toBottomOf="@+id/view_business_cost_defider" />
 
         <TextView
-            android:id="@+id/tv_business_profit_running_chart"
+            android:id="@+id/tv_business_cost_running_chart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:text="View In Chart"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_business_profit_running_to" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_business_cost_running_to" />
 
         <TextView
-            android:id="@+id/tv_business_profit_running_chartPercentage"
+            android:id="@+id/tv_business_cost_running_chartPercentage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
             android:text="60%"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_business_profit_running_chart" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_business_cost_running_chart" />
 
         <View
             android:id="@+id/view_home_defider"
@@ -149,10 +148,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_business_profit_running_reachedChart" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_business_cost_running_reachedChart" />
 
         <TextView
-            android:id="@+id/tv_business_profit_running_status"
+            android:id="@+id/tv_business_cost_running_status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -162,66 +161,66 @@
             app:layout_constraintTop_toBottomOf="@+id/view_home_defider" />
 
         <TextView
-            android:id="@+id/tv_business_profit_running_targetReached"
+            android:id="@+id/tv_business_cost_running_targetReached"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="24dp"
             android:text="@string/business_targetReached"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_business_profit_running_status" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_business_cost_running_status" />
 
         <TextView
-            android:id="@+id/tv_business_profit_running_reachedValue"
+            android:id="@+id/tv_business_cost_running_reachedValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="24dp"
             android:text="@string/business_reachedValue"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/tv_business_profit_running_targetReached"
-            app:layout_constraintTop_toTopOf="@+id/tv_business_profit_running_targetReached" />
+            app:layout_constraintStart_toEndOf="@+id/tv_business_cost_running_targetReached"
+            app:layout_constraintTop_toTopOf="@+id/tv_business_cost_running_targetReached" />
 
         <TextView
-            android:id="@+id/tv_business_profit_running_targetProfit"
+            android:id="@+id/tv_business_cost_running_targetCost"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
-            android:text="@string/business_targetProfit"
+            android:text="@string/business_targetCost"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_business_profit_running_targetReached" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_business_cost_running_targetReached" />
 
         <TextView
-            android:id="@+id/tv_business_profit_running_profitValue"
+            android:id="@+id/tv_business_cost_running_costValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="24dp"
-            android:text="@string/business_profitValue"
+            android:text="@string/business_costValue"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/tv_business_profit_running_targetReached"
-            app:layout_constraintTop_toBottomOf="@+id/tv_business_profit_running_reachedValue" />
+            app:layout_constraintStart_toEndOf="@+id/tv_business_cost_running_targetReached"
+            app:layout_constraintTop_toBottomOf="@+id/tv_business_cost_running_reachedValue" />
 
         <TextView
-            android:id="@+id/tv_business_profit_running_reachedChart"
+            android:id="@+id/tv_business_cost_running_reachedChart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:text="@string/business_targetReached"
-            app:layout_constraintEnd_toStartOf="@+id/tv_business_profit_running_profitChart"
+            app:layout_constraintEnd_toStartOf="@+id/tv_business_cost_running_costChart"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_business_profit_running_chartPercentage" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_business_cost_running_chartPercentage" />
 
         <TextView
-            android:id="@+id/tv_business_profit_running_profitChart"
+            android:id="@+id/tv_business_cost_running_costChart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/business_targetProfit"
+            android:text="@string/business_targetCost"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/tv_business_profit_running_reachedChart"
-            app:layout_constraintTop_toTopOf="@+id/tv_business_profit_running_reachedChart" />
+            app:layout_constraintStart_toEndOf="@+id/tv_business_cost_running_reachedChart"
+            app:layout_constraintTop_toTopOf="@+id/tv_business_cost_running_reachedChart" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_home_transaction"
@@ -230,12 +229,12 @@
             android:layout_marginTop="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/group_profit_running"
+            app:layout_constraintTop_toBottomOf="@+id/group_cost_running"
             tools:itemCount="5"
             tools:listitem="@layout/item_cardview_transaction" />
 
         <androidx.constraintlayout.widget.Group
-            android:id="@+id/group_profit_history"
+            android:id="@+id/group_cost_history"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -244,21 +243,21 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view_business_profit_defider" />
+            app:layout_constraintTop_toBottomOf="@+id/view_business_cost_defider" />
 
         <androidx.constraintlayout.widget.Group
-            android:id="@+id/group_profit_running"
+            android:id="@+id/group_cost_running"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:visibility="visible"
-            app:constraint_referenced_ids="tv_business_profit_running_targetReached,tv_business_profit_running_reachedValue,tv_business_profit_running_reachedChart,tv_business_profit_running_targetProfit,tv_business_profit_running_profitChart,tv_business_profit_running_chart,tv_business_profit_running_chartPercentage,tv_business_profit_running_profitValue,tv_business_profit_running_status,tv_business_profit_running_to,tv_business_profit_running_startDate,tv_business_profit_running_endDate,view_home_defider"
+            app:constraint_referenced_ids="tv_business_cost_running_targetReached,tv_business_cost_running_reachedValue,tv_business_cost_running_reachedChart,tv_business_cost_running_targetCost,tv_business_cost_running_costChart,tv_business_cost_running_chart,tv_business_cost_running_chartPercentage,tv_business_cost_running_costValue,tv_business_cost_running_status,tv_business_cost_running_to,tv_business_cost_running_startDate,tv_business_cost_running_endDate,view_home_defider"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view_business_profit_defider" />
+            app:layout_constraintTop_toBottomOf="@+id/view_business_cost_defider" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!--    Profit History Layout-->
+    <!--    Cost History Layout-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
