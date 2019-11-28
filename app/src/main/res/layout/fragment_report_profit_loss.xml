@@ -5,7 +5,6 @@
     android:id="@+id/constrain_report_profit_loss_layerParent"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBlueDark"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintTop_toTopOf="parent"
     tools:context=".ui.report_profit_loss.ReportProfitLossFragment">
@@ -26,7 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="24dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
         android:fontFamily="@font/roboto_medium"
         android:gravity="center"
@@ -52,7 +51,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constrain_report_profit_loss_layerInherit"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:layout_marginTop="24dp"
         android:background="@drawable/all_bg_rounded_white"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -69,7 +68,6 @@
             android:gravity="center"
             android:text="PROFIT AND LOSS"
             android:textSize="14sp"
-            app:layout_constraintBottom_toTopOf="@id/view_report_profit_loss_defider"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/constrain_report_profit_loss_layerInherit" />
@@ -78,15 +76,11 @@
             android:id="@+id/imageButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="128dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="24dp"
+            android:layout_marginEnd="16dp"
             android:background="@drawable/all_ic_option_black"
-            app:layout_constraintBottom_toTopOf="@+id/view_report_profit_loss_defider"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_report_profit_loss_report_profit_lossTitle"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/tv_report_profit_loss_report_profit_lossTitle"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_report_profit_loss_report_profit_lossTitle"
             app:layout_constraintVertical_bias="0.533" />
 
         <View
