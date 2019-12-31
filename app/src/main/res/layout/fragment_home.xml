@@ -82,7 +82,8 @@
             android:src="@drawable/home_ic_cash_out"
             app:layout_constraintEnd_toStartOf="@+id/ib_home_debt"
             app:layout_constraintStart_toEndOf="@+id/ib_home_cashIn"
-            app:layout_constraintTop_toTopOf="@+id/ib_home_cashIn" />
+            app:layout_constraintTop_toTopOf="@+id/ib_home_cashIn"
+            android:contentDescription="@string/all_cashOut" />
 
         <TextView
             android:id="@+id/tv_home_cashOut"
@@ -103,7 +104,8 @@
             android:src="@drawable/home_ic_debt"
             app:layout_constraintEnd_toStartOf="@+id/ib_home_loan"
             app:layout_constraintStart_toEndOf="@+id/ib_home_cashOut"
-            app:layout_constraintTop_toTopOf="@+id/ib_home_cashOut" />
+            app:layout_constraintTop_toTopOf="@+id/ib_home_cashOut"
+            android:contentDescription="@string/all_debt" />
 
         <TextView
             android:id="@+id/tv_home_debt"
@@ -123,7 +125,8 @@
             android:src="@drawable/home_ic_loan"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/ib_home_debt"
-            app:layout_constraintTop_toTopOf="@+id/ib_home_cashOut" />
+            app:layout_constraintTop_toTopOf="@+id/ib_home_cashOut"
+            android:contentDescription="@string/all_loan" />
 
         <TextView
             android:id="@+id/tv_home_loan"
@@ -194,39 +197,6 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/rv_home_target" />
 
-                <View
-                    android:id="@+id/view_home_divider2"
-                    android:layout_width="match_parent"
-                    android:layout_height="0.5dp"
-                    android:layout_marginTop="168dp"
-                    android:background="@android:color/darker_gray"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/btn_home_income_expense_weekly" />
-
-                <TextView
-                    android:id="@+id/tv_business_status"
-                    style="@style/TextStyle.Normal.Small.Caps"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="16dp"
-                    android:text="@string/all_recentTransaction"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/view_home_divider2"
-                    tools:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/tv_home_dateInfo"
-                    style="@style/TextStyle.Normal.Small.Caps"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginEnd="24dp"
-                    android:text="@string/onToday"
-                    app:layout_constraintBottom_toTopOf="@id/rv_home_transaction"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/view_home_divider2"
-                    app:layout_constraintVertical_bias="0.0" />
-
                 <TextView
                     android:id="@+id/home_profit_loss_name"
                     style="@style/TextStyle.Normal.Small.Caps"
@@ -259,15 +229,24 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/btn_home_profit_loss_weekly" />
 
+                <com.github.mikephil.charting.charts.BarChart
+                    android:id="@+id/chart_home_profit_loss_bar_chart"
+                    android:layout_width="match_parent"
+                    android:layout_height="325dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_home_profit_loss_weekly" />
+
                 <TextView
                     android:id="@+id/home_income_expense_name"
                     style="@style/TextStyle.Normal.Small.Caps"
                     android:layout_marginStart="24dp"
-                    android:layout_marginTop="168dp"
+                    android:layout_marginTop="16dp"
                     android:text="@string/home_income_expense_name"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/btn_home_profit_loss_weekly"
+                    app:layout_constraintTop_toBottomOf="@+id/chart_home_profit_loss_bar_chart"
                     tools:textStyle="bold" />
 
                 <Button
@@ -291,6 +270,48 @@
                     android:text="@string/onMonthly"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/btn_home_income_expense_weekly" />
+
+                <com.github.mikephil.charting.charts.BarChart
+                    android:id="@+id/chart_home_income_expense_bar_chart"
+                    android:layout_width="match_parent"
+                    android:layout_height="325dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_home_income_expense_weekly" />
+
+                <View
+                    android:id="@+id/view_home_divider2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@android:color/darker_gray"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/chart_home_income_expense_bar_chart" />
+
+                <TextView
+                    android:id="@+id/tv_business_status"
+                    style="@style/TextStyle.Normal.Small.Caps"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/all_recentTransaction"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view_home_divider2"
+                    tools:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_home_dateInfo"
+                    style="@style/TextStyle.Normal.Small.Caps"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="24dp"
+                    android:text="@string/onToday"
+                    app:layout_constraintBottom_toTopOf="@id/rv_home_transaction"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view_home_divider2"
+                    app:layout_constraintVertical_bias="0.0" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_home_transaction"
