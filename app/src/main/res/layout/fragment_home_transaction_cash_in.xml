@@ -100,25 +100,6 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tv_cash_in_total_value" />
 
-                <View
-                    android:id="@+id/view_cashIn_divider"
-                    android:layout_width="match_parent"
-                    android:layout_height="0.5dp"
-                    android:layout_marginTop="168dp"
-                    android:background="@android:color/darker_gray"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/btn_cash_in_analysis_weekly" />
-
-                <View
-                    android:id="@+id/view_cashIn_divider3"
-                    android:layout_width="match_parent"
-                    android:layout_height="0.5dp"
-                    android:background="@android:color/darker_gray"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/rv_cashIn_transaction" />
-
                 <Button
                     android:id="@+id/btn_cash_in_analysis_weekly"
                     style="@style/ButtonStyle.Normal.Small"
@@ -140,6 +121,25 @@
                     android:text="@string/onMonthly"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/btn_cash_in_analysis_weekly" />
+
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/chart_cash_in_analysis_line_chart"
+                    android:layout_width="match_parent"
+                    android:layout_height="325dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_cash_in_analysis_weekly" />
+
+                <View
+                    android:id="@+id/view_cashIn_divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@android:color/darker_gray"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/chart_cash_in_analysis_line_chart" />
 
                 <TextView
                     android:id="@+id/tv_cash_in_recent_name"
@@ -196,6 +196,15 @@
                     app:layout_constraintTop_toBottomOf="@+id/view_cashIn_divider2"
                     tools:itemCount="5"
                     tools:listitem="@layout/item_cardview_transaction" />
+
+                <View
+                    android:id="@+id/view_cashIn_divider3"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@android:color/darker_gray"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rv_cashIn_transaction" />
 
                 <TextView
                     android:id="@+id/tv_cash_in_see_all"
