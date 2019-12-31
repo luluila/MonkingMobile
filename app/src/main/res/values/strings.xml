@@ -54,4 +54,6 @@
     <string name="transaction_totalDebt">Total Debt</string>
     <string name="transaction_analysisDebt">Debt Analysis</string>
     <string name="transaction_recentDebt">Recent Debt</string>
+    <string name="home_profit_loss_name"><![CDATA[PROFIT & LOSS]]></string>
+    <string name="home_income_expense_name"><![CDATA[INCOME & EXPENSE]]></string>
 </resources>

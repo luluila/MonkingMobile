@@ -5,6 +5,7 @@
     android:id="@+id/scrollview_home"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorBlueMedium"
     android:fillViewport="true"
     tools:context="com.ryutta.monkingmobile.ui.home.HomeFragment">
 
@@ -19,136 +20,118 @@
 
         <TextView
             android:id="@+id/tv_home_balance"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/TextStyle.Normal.Small.Caps"
             android:layout_marginStart="24dp"
             android:layout_marginTop="32dp"
-            android:fontFamily="@font/roboto_regular"
             android:lineSpacingExtra="8sp"
             android:text="@string/home_balance"
             android:textColor="@color/colorWhite"
             android:textSize="14sp"
-            android:textStyle="normal"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tv_home_balanceValue"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
+            style="@style/TextStyle.Medium.Small"
             android:layout_marginEnd="24dp"
-            android:fontFamily="@font/roboto_medium"
-            android:text="@string/home_balanceValue"
-            android:textAlignment="textEnd"
             android:textColor="@color/colorWhite"
             android:textSize="48sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_home_balance" />
+            app:layout_constraintTop_toBottomOf="@id/tv_home_balance"
+            tools:text="@string/home_balanceValue" />
 
         <TextView
             android:id="@+id/tv_home_balanceDate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/TextStyle.Normal.Small.Caps"
             android:layout_marginEnd="24dp"
-            android:fontFamily="@font/roboto_regular"
-            android:text="@string/home_balanceDate"
             android:textColor="@color/colorWhite"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/tv_home_balance" />
+            app:layout_constraintTop_toTopOf="@+id/tv_home_balance"
+            tools:text="@string/home_balanceDate" />
 
         <ImageButton
-            android:id="@+id/ib_home_cashIn2"
-            style="@style/Widget.AppCompat.Button.Borderless"
+            android:id="@+id/ib_home_cashIn"
+            style="@style/ImageButtonStyle"
             android:layout_width="0dp"
             android:layout_height="65dp"
             android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="8dp"
+            android:contentDescription="@string/all_cashIn"
             android:src="@drawable/home_ic_cash_in"
-            app:layout_constraintEnd_toStartOf="@+id/ib_home_cashOut2"
+            app:layout_constraintEnd_toStartOf="@+id/ib_home_cashOut"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_home_balanceValue" />
 
         <TextView
-            android:id="@+id/tv_home_cashIn2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:id="@+id/tv_home_cashIn"
+            style="@style/TextStyle.Normal.Small.Caps"
             android:text="@string/all_cashIn"
-            app:layout_constraintEnd_toEndOf="@+id/ib_home_cashIn2"
-            app:layout_constraintStart_toStartOf="@+id/ib_home_cashIn2"
-            app:layout_constraintTop_toBottomOf="@+id/ib_home_cashIn2" />
+            app:layout_constraintEnd_toEndOf="@+id/ib_home_cashIn"
+            app:layout_constraintStart_toStartOf="@+id/ib_home_cashIn"
+            app:layout_constraintTop_toBottomOf="@+id/ib_home_cashIn" />
 
         <ImageButton
-            android:id="@+id/ib_home_cashOut2"
-            style="@style/Widget.AppCompat.Button.Borderless"
+            android:id="@+id/ib_home_cashOut"
+            style="@style/ImageButtonStyle"
             android:layout_width="0dp"
             android:layout_height="65dp"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             android:src="@drawable/home_ic_cash_out"
-            app:layout_constraintEnd_toStartOf="@+id/ib_home_debt2"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/ib_home_cashIn2"
-            app:layout_constraintTop_toTopOf="@+id/ib_home_cashIn2" />
+            app:layout_constraintEnd_toStartOf="@+id/ib_home_debt"
+            app:layout_constraintStart_toEndOf="@+id/ib_home_cashIn"
+            app:layout_constraintTop_toTopOf="@+id/ib_home_cashIn" />
 
         <TextView
-            android:id="@+id/tv_home_cashOut2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/tv_home_cashOut"
+            style="@style/TextStyle.Normal.Small.Caps"
             android:layout_marginBottom="16dp"
-            android:background="?attr/selectableItemBackground"
             android:text="@string/all_cashOut"
-            app:layout_constraintEnd_toEndOf="@+id/ib_home_cashOut2"
-            app:layout_constraintStart_toStartOf="@+id/ib_home_cashOut2"
-            app:layout_constraintTop_toTopOf="@+id/tv_home_cashIn2" />
+            app:layout_constraintEnd_toEndOf="@+id/ib_home_cashOut"
+            app:layout_constraintStart_toStartOf="@+id/ib_home_cashOut"
+            app:layout_constraintTop_toTopOf="@+id/tv_home_cashIn" />
 
         <ImageButton
-            android:id="@+id/ib_home_debt2"
-            style="@style/Widget.AppCompat.Button.Borderless"
+            android:id="@+id/ib_home_debt"
+            style="@style/ImageButtonStyle"
             android:layout_width="0dp"
             android:layout_height="65dp"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             android:src="@drawable/home_ic_debt"
-            app:layout_constraintEnd_toStartOf="@+id/ib_home_loan2"
-            app:layout_constraintStart_toEndOf="@+id/ib_home_cashOut2"
-            app:layout_constraintTop_toTopOf="@+id/ib_home_cashOut2" />
+            app:layout_constraintEnd_toStartOf="@+id/ib_home_loan"
+            app:layout_constraintStart_toEndOf="@+id/ib_home_cashOut"
+            app:layout_constraintTop_toTopOf="@+id/ib_home_cashOut" />
 
         <TextView
-            android:id="@+id/tv_home_debt2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/tv_home_debt"
+            style="@style/TextStyle.Normal.Small.Caps"
             android:text="@string/all_debt"
-            app:layout_constraintEnd_toEndOf="@+id/ib_home_debt2"
-            app:layout_constraintStart_toStartOf="@+id/ib_home_debt2"
-            app:layout_constraintTop_toTopOf="@+id/tv_home_cashIn2" />
+            app:layout_constraintEnd_toEndOf="@+id/ib_home_debt"
+            app:layout_constraintStart_toStartOf="@+id/ib_home_debt"
+            app:layout_constraintTop_toTopOf="@+id/tv_home_cashIn" />
 
         <ImageButton
-            android:id="@+id/ib_home_loan2"
-            style="@style/Widget.AppCompat.Button.Borderless"
+            android:id="@+id/ib_home_loan"
+            style="@style/ImageButtonStyle"
             android:layout_width="0dp"
             android:layout_height="65dp"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="24dp"
             android:src="@drawable/home_ic_loan"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/ib_home_debt2"
-            app:layout_constraintTop_toTopOf="@+id/ib_home_cashOut2" />
+            app:layout_constraintStart_toEndOf="@+id/ib_home_debt"
+            app:layout_constraintTop_toTopOf="@+id/ib_home_cashOut" />
 
         <TextView
-            android:id="@+id/tv_home_loan2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/tv_home_loan"
+            style="@style/TextStyle.Normal.Small.Caps"
             android:text="@string/all_loan"
-            app:layout_constraintEnd_toEndOf="@+id/ib_home_loan2"
-            app:layout_constraintStart_toStartOf="@+id/ib_home_loan2"
-            app:layout_constraintTop_toTopOf="@+id/tv_home_cashIn2" />
+            app:layout_constraintEnd_toEndOf="@+id/ib_home_loan"
+            app:layout_constraintStart_toStartOf="@+id/ib_home_loan"
+            app:layout_constraintTop_toTopOf="@+id/tv_home_cashIn" />
 
         <androidx.core.widget.NestedScrollView
             android:id="@+id/scrollview_home_inside"
@@ -157,9 +140,9 @@
             android:layout_marginTop="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_home_balanceValue">
+            app:layout_constraintTop_toBottomOf="@+id/tv_home_balanceValue"
+            app:layout_constraintVertical_bias="1.0">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constrain_home_layerInherit"
@@ -167,6 +150,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginTop="104dp"
                 android:background="@drawable/all_bg_rounded_white"
+                android:minHeight="600dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -200,7 +184,7 @@
                 <!--                android:elevation="5dp"/>-->
 
                 <View
-                    android:id="@+id/view_home_defider"
+                    android:id="@+id/view_home_divider"
                     android:layout_width="match_parent"
                     android:layout_height="0.5dp"
                     android:layout_marginTop="16dp"
@@ -211,145 +195,113 @@
                     app:layout_constraintTop_toBottomOf="@id/rv_home_target" />
 
                 <View
-                    android:id="@+id/view_home_defider2"
+                    android:id="@+id/view_home_divider2"
                     android:layout_width="match_parent"
                     android:layout_height="0.5dp"
-                    android:layout_marginTop="32dp"
+                    android:layout_marginTop="168dp"
                     android:background="@android:color/darker_gray"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView10" />
+                    app:layout_constraintTop_toBottomOf="@+id/btn_home_income_expense_weekly" />
 
                 <TextView
                     android:id="@+id/tv_business_status"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    style="@style/TextStyle.Normal.Small.Caps"
                     android:layout_marginStart="24dp"
                     android:layout_marginTop="16dp"
                     android:text="@string/all_recentTransaction"
+                    android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/view_home_defider2"
+                    app:layout_constraintTop_toBottomOf="@+id/view_home_divider2"
                     tools:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/tv_home_dateInfo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    style="@style/TextStyle.Normal.Small.Caps"
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="24dp"
-                    android:text="@string/all_dateInfo"
-                    android:textStyle="bold"
+                    android:text="@string/onToday"
                     app:layout_constraintBottom_toTopOf="@id/rv_home_transaction"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/view_home_defider2"
+                    app:layout_constraintTop_toBottomOf="@+id/view_home_divider2"
                     app:layout_constraintVertical_bias="0.0" />
 
-                <include
-                    android:id="@+id/rv_home_transaction"
-                    layout="@layout/item_cardview_transaction"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginEnd="24dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_business_status" />
-
-                <include
-                    android:id="@+id/include_home_transaction_2"
-                    layout="@layout/item_cardview_transaction"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginEnd="24dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/rv_home_transaction" />
-
-                <include
-                    android:id="@+id/include_home_transaction_3"
-                    layout="@layout/item_cardview_transaction"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginEnd="24dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/include_home_transaction_2" />
-
-                <include
-                    android:id="@+id/include_home_transaction_4"
-                    layout="@layout/item_cardview_transaction"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginEnd="24dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/include_home_transaction_3" />
-
-                <include
-                    android:id="@+id/include_home_transaction_5"
-                    layout="@layout/item_cardview_transaction"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginEnd="24dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/include_home_transaction_4" />
-
-                <include
-                    android:id="@+id/include_home_transaction_5"
-                    layout="@layout/item_cardview_transaction"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginEnd="24dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/include_home_transaction_4" />
-
                 <TextView
-                    android:id="@+id/textView9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/home_profit_loss_name"
+                    style="@style/TextStyle.Normal.Small.Caps"
                     android:layout_marginStart="24dp"
                     android:layout_marginTop="16dp"
-                    android:text="PROFIT &amp; LOSS"
+                    android:text="@string/home_profit_loss_name"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/view_home_defider" />
+                    app:layout_constraintTop_toBottomOf="@+id/view_home_divider" />
+
+                <Button
+                    android:id="@+id/btn_home_profit_loss_weekly"
+                    style="@style/ButtonStyle.Normal.Small"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="8dp"
+                    android:elevation="4dp"
+                    android:text="@string/onWeekly"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@+id/btn_home_profit_loss_monthly"
+                    app:layout_constraintTop_toBottomOf="@+id/home_profit_loss_name" />
+
+                <Button
+                    android:id="@+id/btn_home_profit_loss_monthly"
+                    style="@style/ButtonStyle.Normal.Small"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="24dp"
+                    android:elevation="0dp"
+                    android:text="@string/onMonthly"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/btn_home_profit_loss_weekly" />
 
                 <TextView
-                    android:id="@+id/textView10"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/home_income_expense_name"
+                    style="@style/TextStyle.Normal.Small.Caps"
                     android:layout_marginStart="24dp"
-                    android:layout_marginTop="32dp"
-                    android:text="INCOME &amp; EXPENSE"
+                    android:layout_marginTop="168dp"
+                    android:text="@string/home_income_expense_name"
+                    android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView9"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_home_profit_loss_weekly"
                     tools:textStyle="bold" />
-                <!--            <androidx.recyclerview.widget.RecyclerView-->
-                <!--                android:id="@+id/rv_home_transaction"-->
-                <!--                android:layout_width="match_parent"-->
-                <!--                android:layout_height="wrap_content"-->
-                <!--                android:layout_marginTop="8dp"-->
-                <!--                app:layout_constraintBottom_toBottomOf="parent"-->
-                <!--                app:layout_constraintEnd_toEndOf="parent"-->
-                <!--                app:layout_constraintHorizontal_bias="0.0"-->
-                <!--                app:layout_constraintStart_toStartOf="parent"-->
-                <!--                app:layout_constraintTop_toBottomOf="@+id/tv_business_status"-->
-                <!--                app:layout_constraintVertical_bias="0.0"-->
-                <!--                tools:itemCount="3"-->
-                <!--                tools:listitem="@layout/item_cardview_transaction" />-->
+
+                <Button
+                    android:id="@+id/btn_home_income_expense_weekly"
+                    style="@style/ButtonStyle.Normal.Small"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="8dp"
+                    android:elevation="4dp"
+                    android:text="@string/onWeekly"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@+id/btn_home_income_expense_monthly"
+                    app:layout_constraintTop_toBottomOf="@+id/home_income_expense_name" />
+
+                <Button
+                    android:id="@+id/btn_home_income_expense_monthly"
+                    style="@style/ButtonStyle.Normal.Small"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="24dp"
+                    android:elevation="0dp"
+                    android:text="@string/onMonthly"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/btn_home_income_expense_weekly" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_home_transaction"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_business_status"
+                    tools:itemCount="5"
+                    tools:listitem="@layout/item_cardview_transaction" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.core.widget.NestedScrollView>
