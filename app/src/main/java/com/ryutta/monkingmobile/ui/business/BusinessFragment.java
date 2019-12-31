@@ -1,5 +1,6 @@
 package com.ryutta.monkingmobile.ui.business;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -15,13 +16,21 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.data.PieData;
+import com.github.mikephil.charting.data.PieDataSet;
+import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.utils.ColorTemplate;
 import com.ryutta.monkingmobile.R;
+
+import java.util.ArrayList;
 
 public class BusinessFragment extends Fragment implements View.OnClickListener, PopupMenu.OnMenuItemClickListener {
 
     Group groupProfitRunning;
     Group groupProfitHistory;
     TextView barTitle;
+    PieChart pieChart;
 
     private NavController navController = null;
 
@@ -43,6 +52,35 @@ public class BusinessFragment extends Fragment implements View.OnClickListener, 
 
         view.findViewById(R.id.ib_menu_businessType).setOnClickListener(this);
         view.findViewById(R.id.ib_profit_option).setOnClickListener(this);
+
+        pieChart = (PieChart) view.findViewById(R.id.tv_business_profit_running_chart);
+
+        pieChart.setUsePercentValues(true);
+        pieChart.getDescription().setEnabled(false);
+        pieChart.setExtraOffsets(5,10,5,5);
+
+        pieChart.setDragDecelerationFrictionCoef(0.99f);
+
+        pieChart.setDrawHoleEnabled(true);
+        pieChart.setHoleColor(Color.WHITE);
+        pieChart.setTransparentCircleRadius(61f);
+
+        ArrayList <PieEntry> yValues = new ArrayList<>();
+
+        yValues.add(new PieEntry(80f, "Reached"));
+        yValues.add(new PieEntry(20f, "Target"));
+
+        PieDataSet dataset = new PieDataSet(yValues, "Business Profit");
+        dataset.setSliceSpace(3f);
+        dataset.setSelectionShift(5f);
+        dataset.setColors(ColorTemplate.JOYFUL_COLORS);
+
+        PieData data = new PieData(dataset);
+        data.setValueTextSize(20f);
+        data.setValueTextColor(Color.YELLOW);
+
+        pieChart.setData(data);
+
     }
 
     @Override
