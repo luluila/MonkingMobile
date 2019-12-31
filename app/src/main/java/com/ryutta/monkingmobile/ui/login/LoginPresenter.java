@@ -42,12 +42,14 @@ public class LoginPresenter {
                     Log.d("token", "onResponse: "+token);
                 } else {
                     Log.d("ERROR_CODE", "error");
+                    view.moveIntoMain();
                 }
             }
 
             @Override
             public void onFailure(Call<ResponseLogin> call, Throwable t) {
                 Log.e("LOGIN", "LOGIN ERROR: true");
+                view.moveIntoMain();
             }
         });
     }
