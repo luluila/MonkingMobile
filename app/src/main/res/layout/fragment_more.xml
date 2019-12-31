@@ -5,7 +5,6 @@
     android:id="@+id/constrain_more_layerParent"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
@@ -45,51 +44,51 @@
         app:layout_constraintVertical_bias="0.0">
 
         <ImageButton
-            android:id="@+id/ib_more_next"
+            android:id="@+id/ib_more_next_businessProfile"
             android:layout_width="wrap_content"
             android:layout_height="28dp"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="@string/all_backButton"
             android:src="@drawable/more_ic_next_black_small"
-            app:layout_constraintBottom_toBottomOf="@+id/textView11"
-            app:layout_constraintEnd_toEndOf="@+id/view_home_defider3"
-            app:layout_constraintTop_toTopOf="@+id/textView10" />
+            app:layout_constraintBottom_toBottomOf="@+id/tv_more_businessDesc"
+            app:layout_constraintEnd_toEndOf="@+id/view_more_defider1"
+            app:layout_constraintTop_toTopOf="@+id/tv_more_businessName" />
 
         <ImageButton
-            android:id="@+id/ib_more_next2"
+            android:id="@+id/ib_more_next_target"
             android:layout_width="wrap_content"
             android:layout_height="28dp"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="@string/all_backButton"
             android:src="@drawable/more_ic_next_black_small"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView4"
-            app:layout_constraintEnd_toEndOf="@+id/view_home_defider4"
-            app:layout_constraintTop_toTopOf="@+id/imageView4" />
+            app:layout_constraintBottom_toBottomOf="@+id/iv_more_target"
+            app:layout_constraintEnd_toEndOf="@+id/view_more_defider2"
+            app:layout_constraintTop_toTopOf="@+id/iv_more_target" />
 
         <ImageButton
-            android:id="@+id/ib_more_next3"
+            android:id="@+id/ib_more_next_account"
             android:layout_width="wrap_content"
             android:layout_height="28dp"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="@string/all_backButton"
             android:src="@drawable/more_ic_next_black_small"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView5"
-            app:layout_constraintEnd_toEndOf="@+id/view_home_defider4"
-            app:layout_constraintTop_toTopOf="@+id/imageView5" />
+            app:layout_constraintBottom_toBottomOf="@+id/iv_more_account"
+            app:layout_constraintEnd_toEndOf="@+id/view_more_defider2"
+            app:layout_constraintTop_toTopOf="@+id/iv_more_account" />
 
         <ImageButton
-            android:id="@+id/ib_more_next4"
+            android:id="@+id/ib_more_next_setting"
             android:layout_width="wrap_content"
             android:layout_height="28dp"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="@string/all_backButton"
             android:src="@drawable/more_ic_next_black_small"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView6"
-            app:layout_constraintEnd_toEndOf="@+id/view_home_defider5"
-            app:layout_constraintTop_toTopOf="@+id/imageView6" />
+            app:layout_constraintBottom_toBottomOf="@+id/iv_more_setting"
+            app:layout_constraintEnd_toEndOf="@+id/view_more_defider3"
+            app:layout_constraintTop_toTopOf="@+id/iv_more_setting" />
 
         <View
-            android:id="@+id/view_home_defider3"
+            android:id="@+id/view_more_defider1"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:layout_marginStart="24dp"
@@ -99,10 +98,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView11" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_more_businessDesc" />
 
         <View
-            android:id="@+id/view_home_defider4"
+            android:id="@+id/view_more_defider2"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:layout_marginStart="24dp"
@@ -112,10 +111,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+            app:layout_constraintTop_toBottomOf="@+id/iv_more_account" />
 
         <View
-            android:id="@+id/view_home_defider5"
+            android:id="@+id/view_more_defider3"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:layout_marginStart="24dp"
@@ -125,10 +124,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+            app:layout_constraintTop_toBottomOf="@+id/iv_more_setting" />
 
         <TextView
-            android:id="@+id/text_more"
+            android:id="@+id/tv_more_search"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -142,123 +141,123 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView9"
+            android:id="@+id/tv_more_businessInfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="32dp"
             android:text="BUSINESS INFORMATION"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_more" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_more_search" />
 
         <TextView
-            android:id="@+id/textView10"
+            android:id="@+id/tv_more_businessName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:text="SC Team"
-            app:layout_constraintStart_toEndOf="@+id/imageView2"
-            app:layout_constraintTop_toTopOf="@+id/imageView2" />
+            app:layout_constraintStart_toEndOf="@+id/iv_more_business"
+            app:layout_constraintTop_toTopOf="@+id/iv_more_business" />
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/iv_more_business"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
             android:src="@android:drawable/ic_menu_report_image"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView9" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_more_businessInfo" />
 
         <TextView
-            android:id="@+id/textView11"
+            android:id="@+id/tv_more_businessDesc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="IT, Software House"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-            app:layout_constraintStart_toStartOf="@+id/textView10"
-            app:layout_constraintTop_toBottomOf="@+id/textView10" />
+            app:layout_constraintBottom_toBottomOf="@+id/iv_more_business"
+            app:layout_constraintStart_toStartOf="@+id/tv_more_businessName"
+            app:layout_constraintTop_toBottomOf="@+id/tv_more_businessName" />
 
         <TextView
-            android:id="@+id/textView12"
+            android:id="@+id/tv_more_accountingInfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp"
             android:layout_marginTop="16dp"
             android:text="ACCOUNTING"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view_home_defider3" />
+            app:layout_constraintTop_toBottomOf="@+id/view_more_defider1" />
 
         <ImageView
-            android:id="@+id/imageView4"
+            android:id="@+id/iv_more_target"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
             android:src="@android:drawable/ic_menu_report_image"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView12" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_more_accountingInfo" />
 
         <TextView
-            android:id="@+id/textView13"
+            android:id="@+id/tv_more_targetName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:text="Target"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView4"
-            app:layout_constraintStart_toEndOf="@+id/imageView4"
-            app:layout_constraintTop_toTopOf="@+id/imageView4" />
+            app:layout_constraintBottom_toBottomOf="@+id/iv_more_target"
+            app:layout_constraintStart_toEndOf="@+id/iv_more_target"
+            app:layout_constraintTop_toTopOf="@+id/iv_more_target" />
 
         <ImageView
-            android:id="@+id/imageView5"
+            android:id="@+id/iv_more_account"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_marginTop="16dp"
             android:src="@android:drawable/ic_menu_report_image"
-            app:layout_constraintEnd_toEndOf="@+id/imageView4"
-            app:layout_constraintStart_toStartOf="@+id/imageView4"
-            app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+            app:layout_constraintEnd_toEndOf="@+id/iv_more_target"
+            app:layout_constraintStart_toStartOf="@+id/iv_more_target"
+            app:layout_constraintTop_toBottomOf="@+id/iv_more_target" />
 
         <TextView
-            android:id="@+id/textView14"
+            android:id="@+id/tv_more_account_accountName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:text="Account"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView5"
-            app:layout_constraintStart_toEndOf="@+id/imageView5"
-            app:layout_constraintTop_toTopOf="@+id/imageView5" />
+            app:layout_constraintBottom_toBottomOf="@+id/iv_more_account"
+            app:layout_constraintStart_toEndOf="@+id/iv_more_account"
+            app:layout_constraintTop_toTopOf="@+id/iv_more_account" />
 
         <TextView
-            android:id="@+id/textView15"
+            android:id="@+id/tv_more_settingInfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
             android:text="SETTING"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view_home_defider4" />
+            app:layout_constraintTop_toBottomOf="@+id/view_more_defider2" />
 
         <ImageView
-            android:id="@+id/imageView6"
+            android:id="@+id/iv_more_setting"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
             android:src="@android:drawable/ic_menu_report_image"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView15" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_more_settingInfo" />
 
         <TextView
-            android:id="@+id/textView16"
+            android:id="@+id/tv_more_settingName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:text="Setting"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView6"
-            app:layout_constraintStart_toEndOf="@+id/imageView6"
-            app:layout_constraintTop_toTopOf="@+id/imageView6" />
+            app:layout_constraintBottom_toBottomOf="@+id/iv_more_setting"
+            app:layout_constraintStart_toEndOf="@+id/iv_more_setting"
+            app:layout_constraintTop_toTopOf="@+id/iv_more_setting" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
