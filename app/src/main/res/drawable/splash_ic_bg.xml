@@ -4,6 +4,6 @@
 <item>
     <bitmap
         android:gravity="center"
-        android:src="@drawable/ic_moneyking" />
+        android:src="@drawable/ic_logo_monking" />
 </item>
 </layer-list>
