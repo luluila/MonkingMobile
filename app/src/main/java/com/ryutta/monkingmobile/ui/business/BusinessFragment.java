@@ -38,7 +38,7 @@ public class BusinessFragment extends Fragment implements View.OnClickListener, 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-        View view =  inflater.inflate(R.layout.fragment_business, container, false);
+        View view = inflater.inflate(R.layout.fragment_business, container, false);
 
         return view;
     }
@@ -56,11 +56,11 @@ public class BusinessFragment extends Fragment implements View.OnClickListener, 
         view.findViewById(R.id.btn_business_profit_businessTitle).setOnClickListener(this);
         view.findViewById(R.id.btn_business_profit_businessHistory).setOnClickListener(this);
 
-        pieChart = (PieChart) view.findViewById(R.id.tv_business_profit_running_chart);
+        pieChart = (PieChart) view.findViewById(R.id.chart_business_profit_running_pie_chart);
 
         pieChart.setUsePercentValues(true);
         pieChart.getDescription().setEnabled(false);
-        pieChart.setExtraOffsets(5,10,5,5);
+        pieChart.setExtraOffsets(5, 10, 5, 5);
 
         pieChart.setDragDecelerationFrictionCoef(0.99f);
 
@@ -68,7 +68,7 @@ public class BusinessFragment extends Fragment implements View.OnClickListener, 
         pieChart.setHoleColor(Color.WHITE);
         pieChart.setTransparentCircleRadius(61f);
 
-        ArrayList <PieEntry> yValues = new ArrayList<>();
+        ArrayList<PieEntry> yValues = new ArrayList<>();
 
         yValues.add(new PieEntry(80f, "Reached"));
         yValues.add(new PieEntry(20f, "Target"));
@@ -88,7 +88,7 @@ public class BusinessFragment extends Fragment implements View.OnClickListener, 
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.ib_business_option:
                 PopupMenu popupMenu = new PopupMenu(view.getContext(), view);
                 popupMenu.setOnMenuItemClickListener(this);
@@ -117,11 +117,11 @@ public class BusinessFragment extends Fragment implements View.OnClickListener, 
     @SuppressLint("SetTextI18n")
     @Override
     public boolean onMenuItemClick(MenuItem item) {
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.business_type_profit:
-                barTitle.setText("BUSINESS PROFIT");
                 return true;
             case R.id.business_type_cost:
+                barTitle.setText("BUSINESS COST");
                 navController.navigate(R.id.action_navigation_business_to_businessCostFragment);
                 return true;
 //            case R.id.business_detail_profit_running:
