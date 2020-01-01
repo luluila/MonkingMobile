@@ -9,7 +9,7 @@
     </style>
 
     <!-- Splash Screen theme. -->
-    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+    <style name="SplashTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="android:windowBackground">@drawable/splash_ic_bg</item>
     </style>
 

@@ -12,14 +12,14 @@
         android:title="@string/business_barTitle"/>
 
     <item
-        android:id="@+id/navigation_report"
-        android:icon="@drawable/navbar_ic_report_grey_24dp"
-        android:title="@string/report_barTitle" />
-
-    <item
         android:id="@+id/navigation_notifications"
         android:icon="@drawable/navbar_ic_notifications_grey_24dp"
         android:title="@string/notification_barTitle" />
+
+    <item
+        android:id="@+id/navigation_report"
+        android:icon="@drawable/navbar_ic_report_grey_24dp"
+        android:title="@string/report_barTitle" />
 
     <item
         android:id="@+id/navigation_more"
