@@ -5,6 +5,7 @@
     <string name="home_barTitle">Home</string>
     <string name="business_barTitle">Business</string>
     <string name="more_barTitle">More</string>
+    <string name="business_barTitle">Business</string>
     <string name="notification_barTitle">Notice</string>
     <string name="business_profit_barTitle">BUSINESS PROFIT</string>
     <string name="business_cost_barTitle">BUSINESS COST</string>
