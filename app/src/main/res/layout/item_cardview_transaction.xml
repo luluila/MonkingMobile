@@ -8,17 +8,19 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
-    android:layout_marginLeft="24dp"
+    android:layout_marginLeft="10dp"
     android:layout_marginTop="4dp"
-    android:layout_marginRight="24dp"
+    android:layout_marginRight="10dp"
     android:layout_marginBottom="4dp"
     card_view:cardElevation="100dp"
-    card_view:cardCornerRadius="5dp">
+    card_view:cardCornerRadius="10dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layerInside"
         android:layout_width="match_parent"
-        android:layout_height="64dp">
+        android:layout_height="64dp"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp">
 
         <ImageView
             android:id="@+id/iv_cv_icon"
@@ -38,6 +40,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:text="@string/all_cashIn"
+            android:textSize="16dp"
             card_view:layout_constraintStart_toEndOf="@+id/iv_cv_icon"
             card_view:layout_constraintTop_toTopOf="parent" />
 
@@ -47,6 +50,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:text="@string/transaction_titleCashIn"
+            android:textSize="16dp"
             card_view:layout_constraintBottom_toBottomOf="parent"
             card_view:layout_constraintStart_toStartOf="@+id/tv_cv_typeTransaction"
             card_view:layout_constraintTop_toBottomOf="@+id/tv_cv_typeTransaction" />
@@ -56,6 +60,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/transaction_valueCashIn"
+            android:textSize="18dp"
             card_view:layout_constraintBottom_toBottomOf="parent"
             card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintHorizontal_bias="1.0"

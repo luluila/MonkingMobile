@@ -62,7 +62,7 @@
             android:fontFamily="@font/roboto_regular"
             android:gravity="center"
             android:text="PROFIT RUNNING"
-            android:textSize="14sp"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/constrain_business_profit_running_layerInherit" />

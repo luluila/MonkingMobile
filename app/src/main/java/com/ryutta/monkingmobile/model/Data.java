@@ -33,6 +33,8 @@ public class Data {
     @SerializedName("transaction_id")
     private String transactionId;
 
+    public Data() { }
+
     public String getTittle() {
         return tittle;
     }

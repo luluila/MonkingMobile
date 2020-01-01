@@ -51,21 +51,10 @@
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_business_barTitle">
-
-        <TextView
-            android:id="@+id/tv_business_cost_businessTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:fontFamily="@font/roboto_regular"
-            android:gravity="center"
-            android:text="COST RUNNING"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/constrain_business_cost_running_layerInherit" />
+        app:layout_constraintTop_toBottomOf="@id/tv_business_barTitle"
+        app:layout_constraintVertical_bias="1.0">
 
         <ImageButton
             android:id="@+id/ib_cost_option"
@@ -78,15 +67,18 @@
             app:layout_constraintTop_toTopOf="@+id/tv_business_cost_businessTitle"
             app:layout_constraintVertical_bias="0.533" />
 
-        <View
-            android:id="@+id/view_business_cost_defider"
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
+        <TextView
+            android:id="@+id/tv_business_cost_businessTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:background="@android:color/darker_gray"
+            android:fontFamily="@font/roboto_regular"
+            android:gravity="center"
+            android:text="COST RUNNING"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_business_cost_businessTitle" />
+            app:layout_constraintTop_toTopOf="@+id/constrain_business_cost_running_layerInherit" />
 
         <TextView
             android:id="@+id/tv_business_cost_running_startDate"
@@ -111,8 +103,8 @@
             android:id="@+id/tv_business_cost_running_to"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             android:layout_marginBottom="32dp"
+            android:layout_marginTop="16dp"
             android:text="To"
             app:layout_constraintBottom_toTopOf="@+id/tv_business_cost_running_chart"
             app:layout_constraintEnd_toEndOf="parent"
@@ -125,6 +117,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:text="View In Chart"
+            android:textSize="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_business_cost_running_to" />
@@ -135,20 +128,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
             android:text="60%"
+            android:textSize="50dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_business_cost_running_chart" />
-
-        <View
-            android:id="@+id/view_home_defider"
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:layout_marginTop="64dp"
-            android:background="@android:color/darker_gray"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_business_cost_running_reachedChart" />
 
         <TextView
             android:id="@+id/tv_business_cost_running_status"
@@ -195,8 +178,8 @@
             android:id="@+id/tv_business_cost_running_costValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             android:layout_marginEnd="24dp"
+            android:layout_marginTop="16dp"
             android:text="@string/business_costValue"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
@@ -208,6 +191,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
+            android:textSize="18sp"
             android:text="@string/business_targetReached"
             app:layout_constraintEnd_toStartOf="@+id/tv_business_cost_running_costChart"
             app:layout_constraintStart_toStartOf="parent"
@@ -217,21 +201,32 @@
             android:id="@+id/tv_business_cost_running_costChart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="18sp"
             android:text="@string/business_targetCost"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/tv_business_cost_running_reachedChart"
             app:layout_constraintTop_toTopOf="@+id/tv_business_cost_running_reachedChart" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_home_transaction"
+        <View
+            android:id="@+id/view_business_cost_defider"
             android:layout_width="match_parent"
-            android:layout_height="707dp"
+            android:layout_height="0.5dp"
             android:layout_marginTop="16dp"
+            android:background="@android:color/darker_gray"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/group_cost_running"
-            tools:itemCount="5"
-            tools:listitem="@layout/item_cardview_transaction" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_business_cost_businessTitle" />
+
+        <View
+            android:id="@+id/view_home_defider"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="64dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_business_cost_running_reachedChart" />
 
         <androidx.constraintlayout.widget.Group
             android:id="@+id/group_cost_history"
@@ -255,6 +250,17 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/view_business_cost_defider" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_home_transaction"
+            android:layout_width="match_parent"
+            android:layout_height="707dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/group_cost_running"
+            tools:itemCount="5"
+            tools:listitem="@layout/item_cardview_transaction" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

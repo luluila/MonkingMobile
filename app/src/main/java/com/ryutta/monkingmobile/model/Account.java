@@ -19,7 +19,7 @@ public class Account {
     private int accountCode;
 
     @SerializedName("amount")
-    private double amount;
+    private int amount;
 
     @SerializedName("created_at")
     private String createdDate;
@@ -71,7 +71,7 @@ public class Account {
         return amount;
     }
 
-    public void setAmount(double amount) {
+    public void setAmount(int amount) {
         this.amount = amount;
     }
 
