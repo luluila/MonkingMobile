@@ -64,6 +64,9 @@ public class LoginPresenter {
                 } else {
                     Log.d("ERROR_CODE", "error");
 //                    edit.putString(SHARED_PREF_LOGIN, null);
+
+                    view.moveIntoMain();
+
                 }
 
             }
@@ -71,6 +74,8 @@ public class LoginPresenter {
             @Override
             public void onFailure(Call<ResponseLogin> call, Throwable t) {
                 Log.e("ON FAILURE LOGIN", "LOGIN ERROR: true"+t.getMessage());
+             
+
             }
         });
     }

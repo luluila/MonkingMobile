@@ -5,7 +5,6 @@
     android:id="@+id/constrain_notifications_layerParent"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBlueDark"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
@@ -17,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="21dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
         android:fontFamily="@font/roboto_medium"
         android:gravity="center"
@@ -35,7 +34,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constrain_notifications_layerInherit"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:layout_marginTop="24dp"
         android:background="@drawable/all_bg_rounded_white"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -58,48 +57,57 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/constrain_notifications_layerInherit" />
 
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="27dp"
-            android:layout_marginTop="24dp"
-            android:src="@android:drawable/ic_menu_report_image"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/textView17"
-            android:layout_width="wrap_content"
+        <include
+            android:id="@+id/include_notification_1"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:text="Notification 1"
-            android:textSize="14sp"
-            app:layout_constraintStart_toEndOf="@+id/imageView3"
-            app:layout_constraintTop_toTopOf="@+id/imageView3" />
-
-        <TextView
-            android:id="@+id/textView18"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Dummy Text"
-            android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView3"
-            app:layout_constraintStart_toStartOf="@+id/textView17"
-            app:layout_constraintTop_toBottomOf="@+id/textView17" />
-
-        <View
-            android:id="@+id/view_home_defider6"
             android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="24dp"
-            android:background="@android:color/darker_gray"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/imageView3"
-            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+<!--        <ImageView-->
+<!--            android:id="@+id/imageView3"-->
+<!--            android:layout_width="40dp"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:layout_marginStart="27dp"-->
+<!--            android:layout_marginTop="24dp"-->
+<!--            android:src="@android:drawable/ic_menu_report_image"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/textView17"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="16dp"-->
+<!--            android:text="Notification 1"-->
+<!--            android:textSize="14sp"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/imageView3"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/imageView3" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/textView18"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:text="Dummy Text"-->
+<!--            android:textSize="12sp"-->
+<!--            app:layout_constraintBottom_toBottomOf="@+id/imageView3"-->
+<!--            app:layout_constraintStart_toStartOf="@+id/textView17"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/textView17" />-->
+
+<!--        <View-->
+<!--            android:id="@+id/view_home_defider6"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="0.5dp"-->
+<!--            android:layout_marginStart="24dp"-->
+<!--            android:layout_marginTop="16dp"-->
+<!--            android:layout_marginEnd="24dp"-->
+<!--            android:background="@android:color/darker_gray"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="@+id/imageView3"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/imageView3" />-->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
