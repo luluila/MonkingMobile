@@ -323,7 +323,6 @@
                     app:layout_constraintTop_toBottomOf="@+id/tv_business_status"
                     tools:itemCount="5"
                     tools:listitem="@layout/item_cardview_transaction" />
-
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.core.widget.NestedScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>

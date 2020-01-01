@@ -17,7 +17,7 @@ public class SplashActivity extends AppCompatActivity {
     private static final String USER_TOKEN = "Bearer ";
     private static final String SHARED_PREF_LOGIN = "loginStatus";
     private static final String SHARED_PREF= "MoneyKing";
-
+    SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,28 +25,25 @@ public class SplashActivity extends AppCompatActivity {
         // Start home activity
 //        checkApi();
 //        checkLogin();
-        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+        sharedPreferences = getSharedPreferences(SHARED_PREF, MODE_PRIVATE);
+        moveToLogin();
 
         // close splash activity
         finish();
     }
 
-    private void checkApi() {
-
-    }
 
     private void checkLogin() {
-        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREF, MODE_PRIVATE);
+//        String login_status = sharedPreferences.getString(SHARED_PREF_LOGIN, "");
+//        String user_token = sharedPreferences.getString(USER_TOKEN, "");
 
-        String login_status = sharedPreferences.getString(SHARED_PREF_LOGIN, "");
-        String user_token = sharedPreferences.getString(USER_TOKEN, "");
-        if (login_status.isEmpty()){
-//            moveToLogin(user_token);
-            moveToActivity(this, LoginActivity.class);
-        } else {
-//            moveToMain(user_token);
-            moveToActivity(this, MainActivity.class);
-        }
+//        moveToActivity(this, MainActivity.class);
+        moveToActivity(this, LoginActivity.class);
+//        if (login_status.isEmpty()){
+//            moveToActivity(this, LoginActivity.class);
+//        } else {
+//            moveToActivity(this, MainActivity.class);
+//        }
     }
 
     private void moveToLogin(String user_token) {
@@ -58,7 +55,8 @@ public class SplashActivity extends AppCompatActivity {
 
     private void moveToLogin() {
         Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
-//        intent.putExtra("user_token", user_token);
+//        Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+//        intent.putExtra("user_token", user_tokenen);
         startActivity(intent);
     }
 
