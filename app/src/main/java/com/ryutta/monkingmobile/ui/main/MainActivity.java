@@ -1,41 +1,26 @@
 package com.ryutta.monkingmobile.ui.main;
 
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.NavigationUI;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.ryutta.monkingmobile.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.ryutta.monkingmobile.model.Data;
+import com.ryutta.monkingmobile.R;
 import com.ryutta.monkingmobile.model.ResData;
 import com.ryutta.monkingmobile.ui.home.HomeFragment;
 import com.ryutta.monkingmobile.ui.home_transaction_form.HomeTransactionFormActivity;
 
-import java.io.FileDescriptor;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentContainer;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.NavigationUI;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import butterknife.BindView;
-import butterknife.ButterKnife;
-
-import static com.ryutta.monkingmobile.R.id.home;
 import static com.ryutta.monkingmobile.R.id.nav_host_fragment;
 
 public class MainActivity extends AppCompatActivity implements IMain{

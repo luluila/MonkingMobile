@@ -1,24 +1,7 @@
 package com.ryutta.monkingmobile.data.remote.api;
 
-import android.content.Intent;
-import android.content.SharedPreferences;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
-import org.xml.sax.ErrorHandler;
-
-import java.io.IOException;
-
-import okhttp3.Interceptor;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
-import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-
-import static androidx.core.content.ContextCompat.startActivity;
 
 public class ApiRetrofit {
 
