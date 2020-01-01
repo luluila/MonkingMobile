@@ -33,7 +33,7 @@ public class SignUpActivity extends BaseActivity implements ISignUp{
         setContentView(R.layout.activity_sign_up);
         ButterKnife.bind(this);
 
-        presenter = new SignUpPresenter(this);
+        presenter = new SignUpPresenter(this, SignUpActivity.this);
     }
 
     @Override

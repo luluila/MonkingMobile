@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 public class SharedPrefUtils {
+
     private static SharedPreferences sharedPreferences;
     private static SharedPreferences.Editor editor;
 
@@ -19,5 +20,14 @@ public class SharedPrefUtils {
 
     public static SharedPreferences getSharedPreferences(String sharedPrefLogin, String s) {
         return sharedPreferences;
+    }
+
+    public static void setBooleanSharedPref(String key, Boolean values){
+        editor.putBoolean(key, values);
+        editor.apply();
+    }
+
+    public static boolean getBooleanSharedPref(String key){
+        return  sharedPreferences.getBoolean(key, false);
     }
 }
