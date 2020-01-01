@@ -51,7 +51,7 @@ public class MainPresenter {
             public void onResponse(Call<ResponseRecentTransaction> call, Response<ResponseRecentTransaction> response) {
                 Log.e("lele", call.request().headers().toString());
                 if (response.isSuccessful()){
-                    view.showData(response.body().getDataList());
+//                    view.showData(response.body().getDataList());
                     Log.d("GET LIST TRANSAKSI", new Gson().toJson(response.body().getDataList()));
                 } else {
                     response.code();

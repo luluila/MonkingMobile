@@ -40,14 +40,12 @@ import static com.ryutta.monkingmobile.R.id.nav_host_fragment;
 
 public class MainActivity extends AppCompatActivity implements IMain{
 
-    MainPresenter presenter;
-
-    RecyclerView recyclerViewRecetTransaction;
-
-    private HomeAdapter adapter;
-    private List<ResData> dataList = new ArrayList<>();
-
-    HomeFragment homeFragment;
+//    MainPresenter presenter;
+//
+//    RecyclerView recyclerViewRecetTransaction;
+//
+//    private HomeAdapter adapter;
+//    private List<ResData> dataList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,19 +68,4 @@ public class MainActivity extends AppCompatActivity implements IMain{
 
     }
 
-    private void showRecentTransaction() {
-
-        presenter.showRecentTransaction();
-    }
-
-    @Override
-    public void showData(List<ResData> dataList) {
-        adapter = new HomeAdapter(dataList);
-
-        recyclerViewRecetTransaction.setAdapter(adapter);
-    }
-
-    public void test(){
-        Log.e("TEST", "test: test view");
-    }
 }

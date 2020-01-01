@@ -35,20 +35,17 @@ public class LoginPresenter {
 
     void doLogin(String email, String password){
         SharedPreferences sharedPreferences = context.getSharedPreferences("MoneyKing",Context.MODE_PRIVATE);
-        SharedPreferences.Editor edit = sharedPreferences.edit();
+        SharedPreferences.Editor edit;
+        edit = sharedPreferences.edit();
 
         LoginRequest request = new LoginRequest(email, password);
-
-        Call<ResponseLogin> call = ApiRetrofit.getInstance()
-                .getApi()
-                .login(request);
-
         Log.d("LOGIN REQU", new Gson().toJson(request));
 
-        call.enqueue(new Callback<ResponseLogin>() {
+
+        ApiRetrofit.getInstance().getApi().login(request).enqueue(new Callback<ResponseLogin>() {
             @Override
             public void onResponse(Call<ResponseLogin> call, Response<ResponseLogin> response) {
-                Log.d("LOGIN", new Gson().toJson(response.body()));
+                Log.d("ON RESPONSE LOGIN", new Gson().toJson(request));
                 if (response.isSuccessful()){
                     String s = response.body().getToken();
                     Log.d("LOGIN","SUCCES");
@@ -61,23 +58,15 @@ public class LoginPresenter {
                     edit.commit();
 
                     Log.d("  token", "showRecentTransaction: "+token);
-                } else {
-                    Log.d("ERROR_CODE", "error");
-//                    edit.putString(SHARED_PREF_LOGIN, null);
-
-                    view.moveIntoMain();
-
                 }
-
             }
 
             @Override
             public void onFailure(Call<ResponseLogin> call, Throwable t) {
-                Log.e("ON FAILURE LOGIN", "LOGIN ERROR: true"+t.getMessage());
-             
-
+                Log.e("ON FAILURE LOGIN", "LOGIN ERROR: "+t.getMessage());
             }
         });
+
     }
 
 }

@@ -58,14 +58,15 @@ public class HomeTransactionCashInFragment extends Fragment implements View.OnCl
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home_transaction_cash_in, container,
                 false);
-        ButterKnife.bind(this, view);
+//        ButterKnife.bind(this, view);
+
         recyclerView = view.findViewById(R.id.rv_cashIn_transaction);
 
 //        presenter = new CashInPresenter(this, container.getContext());
 //        presenter.showDataCashIn();
 
         addDatTransaksi();
-        setRecyclerView(cashInList);
+        setRecyclerView();
         return view;
     }
 
@@ -129,7 +130,7 @@ public class HomeTransactionCashInFragment extends Fragment implements View.OnCl
     public void setRecyclerView(List<ResData> listData){
         CashInAdapter adapter = new CashInAdapter(this.cashInList);
 
-        Log.e("ON CASH IN SHOW DATA", "showData: "+cashInList.get(1).getTitle());
+        Log.e("ON CASH IN ", "showData: "+cashInList.get(1).getTitle());
 
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext(),

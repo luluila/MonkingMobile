@@ -25,6 +25,9 @@ public class CashInAdapter extends RecyclerView.Adapter<CashInAdapter.CashInList
 
     public CashInAdapter(List<ResData> cashInList) {
         this.cashInList = cashInList;
+
+        Log.e("ON CASH IN ADAP", "CashInAdapter: fix");
+        Log.e("ON cash in list adap", "CashInAdapter: "+cashInList.get(0).getTitle());
     }
 
     @NonNull
@@ -56,17 +59,22 @@ public class CashInAdapter extends RecyclerView.Adapter<CashInAdapter.CashInList
     }
 
     public class CashInListViewHolder extends RecyclerView.ViewHolder{
-        @BindView(R.id.tv_business_targetReached)
+//        @BindView(R.id.tv_business_targetReached)
         TextView transaction;
 
-        @BindView(R.id.tv_cv_typeTransaction)
+//        @BindView(R.id.tv_cv_typeTransaction)
         TextView title;
 
-        @BindView(R.id.tv_business_reachedValue)
+//        @BindView(R.id.tv_business_reachedValue)
         TextView amount;
 
         public CashInListViewHolder(@NonNull View itemView) {
             super(itemView);
+
+            transaction = itemView.findViewById(R.id.tv_business_targetReached);
+            title = itemView.findViewById(R.id.tv_cv_typeTransaction);
+            amount = itemView.findViewById(R.id.tv_business_reachedValue);
+
             ButterKnife.bind(this, itemView);
         }
     }
