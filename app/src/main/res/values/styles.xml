@@ -132,6 +132,10 @@
         <item name="android:textSize">12sp</item>
     </style>
 
+    <style name="ButtonStyle.Normal.Small.Caps">
+        <item name="android:textAllCaps">true</item>
+    </style>
+
     <!--Value for Button Style-->
     <style name="ImageButtonStyle">
         <item name="android:background">?attr/selectableItemBackgroundBorderless</item>

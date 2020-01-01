@@ -5,7 +5,8 @@
     <string name="home_barTitle">Home</string>
     <string name="more_barTitle">More</string>
     <string name="notification_barTitle">Notice</string>
-    <string name="business_barTitle">Business</string>
+    <string name="business_profit_barTitle">BUSINESS PROFIT</string>
+    <string name="business_cost_barTitle">BUSINESS COST</string>
     <string name="report_barTitle">Report</string>
     <string name="home_balance">BALANCE</string>
     <string name="home_balanceValue">478,000</string>
@@ -29,7 +30,7 @@
     <string name="transaction_valueCashIn">290,000</string>
     <string name="business_targetProfit">Target Profit</string>
     <string name="business_profitValue">628,000</string>
-    <string name="business_targetReached">Target Reached</string>
+    <string name="business_profitReached">Profit Reached</string>
     <string name="business_targetCost">Target Cost</string>
     <string name="business_costValue">628,000</string>
     <string name="business_reachedValue">478,000</string>
