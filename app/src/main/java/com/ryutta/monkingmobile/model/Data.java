@@ -19,7 +19,7 @@ public class Data {
     private String debit;
 
     @SerializedName("credit")
-    private double credit;
+    private String credit;
 
     @SerializedName("fm_user_id")
     private int userId;
@@ -32,6 +32,8 @@ public class Data {
 
     @SerializedName("transaction_id")
     private String transactionId;
+
+    public Data() { }
 
     public String getTittle() {
         return tittle;
@@ -73,11 +75,11 @@ public class Data {
         this.debit = debit;
     }
 
-    public double getCredit() {
+    public String getCredit() {
         return credit;
     }
 
-    public void setCredit(double credit) {
+    public void setCredit(String credit) {
         this.credit = credit;
     }
 

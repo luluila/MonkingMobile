@@ -2,11 +2,12 @@ package com.ryutta.monkingmobile.ui.login;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.ryutta.monkingmobile.MainActivity;
+import com.ryutta.monkingmobile.ui.main.MainActivity;
 import com.ryutta.monkingmobile.R;
 import com.ryutta.monkingmobile.base.BaseActivity;
 import com.ryutta.monkingmobile.ui.reset_password.ResetPasswordActivity;
@@ -35,19 +36,34 @@ public class LoginActivity extends BaseActivity implements ILoginView{
     private LoginPresenter presenter;
     private Intent intent;
 
+    Button login;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
 
-        presenter = new LoginPresenter(this);
+//        login = (Button) findViewById(R.id.btn_sign_in);
+//        login.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                onLoginClicked();
+//            }
+//        });
+
+        presenter = new LoginPresenter(this, LoginActivity.this);
+        onLoginClicked();
+
     }
 
     @OnClick(R.id.btn_sign_in)
     public void onLoginClicked(){
-        String emailLogin = email.getText().toString();
-        String password = passwordSignIn.getText().toString();
+//        String emailLogin = email.getText().toString();
+//        String password = passwordSignIn.getText().toString();
+
+        String emailLogin = "billah@cula.id";
+        String password = "billahfaiz";
 
         presenter.doLogin(emailLogin, password);
     }

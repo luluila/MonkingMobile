@@ -1,11 +1,14 @@
 package com.ryutta.monkingmobile.ui.login;
 
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.util.Log;
 
+import com.google.gson.Gson;
 import com.ryutta.monkingmobile.data.remote.api.ApiRetrofit;
 import com.ryutta.monkingmobile.data.remote.api.IApiEndpoint;
-import com.ryutta.monkingmobile.model.User;
+import com.ryutta.monkingmobile.model.request.LoginRequest;
 import com.ryutta.monkingmobile.model.respon.ResponseLogin;
 
 import retrofit2.Call;
@@ -14,28 +17,56 @@ import retrofit2.Response;
 
 public class LoginPresenter {
     private static final String BEARER_TOKEN_PREFIX = "Bearer ";
+    private static final String SHARED_PREF_LOGIN = "loginStatus";
+    private static final String SHARED_USER_ID = "userId";
+    private String USER_TOKEN="token";
 
     private ILoginView view;
+    private Context context;
 
     public LoginPresenter(ILoginView view) {
         this.view = view;
     }
 
-    void doLogin(String email, String password){
-        IApiEndpoint apiEndpoint = ApiRetrofit.getInstance().create(IApiEndpoint.class);
+    public LoginPresenter(ILoginView view, Context context) {
+        this.view = view;
+        this.context = context;
+    }
 
-        apiEndpoint.login(email,password).enqueue(new Callback<ResponseLogin>() {
+    void doLogin(String email, String password){
+        SharedPreferences sharedPreferences = context.getSharedPreferences("MoneyKing",Context.MODE_PRIVATE);
+        SharedPreferences.Editor edit;
+        edit = sharedPreferences.edit();
+
+        LoginRequest request = new LoginRequest(email, password);
+        Log.d("LOGIN REQU", new Gson().toJson(request));
+
+
+        ApiRetrofit.getInstance().getApi().login(request).enqueue(new Callback<ResponseLogin>() {
             @Override
             public void onResponse(Call<ResponseLogin> call, Response<ResponseLogin> response) {
-                String token = BEARER_TOKEN_PREFIX+ new ResponseLogin().getToken();
-                Log.d("debug : ", "OK");
-                view.moveIntoMain();
+                Log.d("ON RESPONSE LOGIN", new Gson().toJson(request));
+                if (response.isSuccessful()){
+                    String s = response.body().getToken();
+                    Log.d("LOGIN","SUCCES");
+                    view.moveIntoMain();
+                    String token = BEARER_TOKEN_PREFIX + s;
+
+                    edit.putString(SHARED_PREF_LOGIN, "Login");
+                    edit.putInt(SHARED_USER_ID, response.body().getUser().getId());
+                    edit.putString(USER_TOKEN, token);
+                    edit.commit();
+
+                    Log.d("  token", "showRecentTransaction: "+token);
+                }
             }
 
             @Override
             public void onFailure(Call<ResponseLogin> call, Throwable t) {
-                Log.e("onFailure : ", "Errorr");
+                Log.e("ON FAILURE LOGIN", "LOGIN ERROR: "+t.getMessage());
             }
         });
+
     }
+
 }

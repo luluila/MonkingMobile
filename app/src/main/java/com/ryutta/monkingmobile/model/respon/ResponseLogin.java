@@ -1,15 +1,19 @@
 package com.ryutta.monkingmobile.model.respon;
 
+import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import com.ryutta.monkingmobile.model.User;
 
+
 public class ResponseLogin {
 
+    @Expose
     @SerializedName("api_token")
-    private String token;
+    private StringBuilder token;
 
+    @Expose
     @SerializedName("user")
-    User user;
+    private User user;
 
     public User getUser() {
         return user;
@@ -20,10 +24,10 @@ public class ResponseLogin {
     }
 
     public String getToken() {
-        return token;
+        return token.toString();
     }
 
     public void setToken(String token) {
-        this.token = token;
+        this.token = new StringBuilder(token);
     }
 }

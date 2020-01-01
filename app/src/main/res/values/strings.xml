@@ -1,15 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">MonkingMobile</string>
 
     <string name="home_barTitle">Home</string>
-    <string name="more_barTitle">More</string>
-    <string name="notification_barTitle">Notice</string>
     <string name="business_barTitle">Business</string>
+    <string name="more_barTitle">More</string>
+    <string name="business_barTitle">Business</string>
+    <string name="notification_barTitle">Notice</string>
+    <string name="business_profit_barTitle">BUSINESS PROFIT</string>
+    <string name="business_cost_barTitle">BUSINESS COST</string>
     <string name="report_barTitle">Report</string>
     <string name="home_balance">BALANCE</string>
     <string name="home_balanceValue">478,000</string>
     <string name="home_balanceDate">31/10/2019</string>
     <string name="all_backButton">Go to Previous</string>
+    <string name="all_optionButton">Option Menu</string>
     <string name="all_cashIn">Cash In</string>
     <string name="all_cashOut">Cash Out</string>
     <string name="all_debt">Debt</string>
@@ -27,10 +32,35 @@
     <string name="transaction_valueCashIn">290,000</string>
     <string name="business_targetProfit">Target Profit</string>
     <string name="business_profitValue">628,000</string>
-    <string name="business_targetReached">Target Reached</string>
+    <string name="business_profitReached">Profit Reached</string>
+    <string name="business_targetCost">Target Cost</string>
+    <string name="business_costValue">628,000</string>
     <string name="business_reachedValue">478,000</string>
     <string name="business_status">STATUS</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="transaction_totalCashIn">Total Cash In</string>
+    <string name="transaction_analysisCashIn">Cash In Analysis</string>
+    <string name="onWeekly">Weekly</string>
+    <string name="onMonthly">Monthly</string>
+    <string name="transaction_recentCashIn">Recent Cash In</string>
+    <string name="onToday">Today</string>
+    <string name="transaction_seeAll">See All Transaction</string>
+    <string name="transaction_totalCashOut">Total Cash Out</string>
+    <string name="transaction_analysisCashOut">Cash Out Analysis</string>
+    <string name="transaction_recentCashOut">Recent Cash Out</string>
+    <string name="transaction_searchTransaction">Search Transaction</string>
+    <string name="transaction_totalLoan">Total Loan</string>
+    <string name="transaction_analysisLoan">Loan Analysis</string>
+    <string name="transaction_recentLoan">Recent Loan</string>
+    <string name="transaction_totalDebt">Total Debt</string>
+    <string name="transaction_analysisDebt">Debt Analysis</string>
+    <string name="transaction_recentDebt">Recent Debt</string>
+    <string name="home_profit_loss_name"><![CDATA[PROFIT & LOSS]]></string>
+    <string name="home_income_expense_name"><![CDATA[INCOME & EXPENSE]]></string>
+    <string name="business_running_title">Running</string>
+    <string name="business_history_title">History</string>
+    <string name="business_running_date_to">To</string>
+    <string name="business_costReached">Cost Reached</string>
 </resources>
