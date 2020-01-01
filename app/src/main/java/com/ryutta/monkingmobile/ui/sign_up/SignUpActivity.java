@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.EditText;
 
+import com.google.android.material.textfield.TextInputEditText;
 import com.ryutta.monkingmobile.base.BaseActivity;
 import com.ryutta.monkingmobile.R;
 import com.ryutta.monkingmobile.ui.login.LoginActivity;
@@ -15,13 +16,13 @@ import butterknife.OnClick;
 public class SignUpActivity extends BaseActivity implements ISignUp{
 
     @BindView(R.id.et_email_sign_up)
-    EditText email;
+    TextInputEditText email;
 
     @BindView(R.id.et_password_sign_up)
-    EditText password;
+    TextInputEditText password;
 
     @BindView(R.id.et_re_password_sign_up)
-    EditText rePassword;
+    TextInputEditText rePassword;
 
     private SignUpPresenter presenter;
     Intent intent;
@@ -32,7 +33,7 @@ public class SignUpActivity extends BaseActivity implements ISignUp{
         setContentView(R.layout.activity_sign_up);
         ButterKnife.bind(this);
 
-        presenter = new SignUpPresenter(this);
+        presenter = new SignUpPresenter(this, SignUpActivity.this);
     }
 
     @Override

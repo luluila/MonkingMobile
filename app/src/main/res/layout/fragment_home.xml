@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/scrollview_home"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:fillViewport="true">
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".ui.home.HomeFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constrain_home_layerParent"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:background="@color/colorBlueDark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -64,7 +65,7 @@
             android:fontFamily="@font/roboto_regular"
             android:text="@string/home_balanceDate"
             android:textColor="@color/colorWhite"
-            android:textSize="14sp"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@id/constrain_home_layerInherit"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -73,47 +74,33 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constrain_home_layerInherit"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
             android:layout_marginTop="24dp"
-            android:background="@drawable/all_rounded_background"
+            android:background="@drawable/all_bg_rounded_white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_home_balanceDate">
 
-            <TextView
-                android:id="@+id/text_home"
+            <include
+                android:id="@+id/rv_home_target"
+                layout="@layout/item_cardview_business"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
-                android:layout_marginEnd="8dp"
-                android:textAlignment="center"
-                android:textSize="20sp"
-                app:layout_constraintBottom_toTopOf="@id/rv_home_target"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/constrain_home_layerInherit"
-                tools:text="This is fragment home" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_home_target"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/text_home"
-                tools:itemCount="1"
-                tools:listitem="@layout/item_cardview_business" />
+                app:layout_constraintTop_toTopOf="parent" />
+
 
             <View
                 android:id="@+id/view_home_defider"
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="16dp"
                 android:background="@android:color/darker_gray"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -122,12 +109,13 @@
 
             <ImageButton
                 android:id="@+id/ib_home_cashIn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="0dp"
+                android:layout_height="65dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
-                android:src="@drawable/home_cashin_button"
+                android:src="@drawable/home_ic_cashin"
                 app:layout_constraintBottom_toTopOf="@+id/tv_home_cashIn"
                 app:layout_constraintEnd_toStartOf="@+id/ib_home_cashOut"
                 app:layout_constraintStart_toStartOf="parent"
@@ -146,11 +134,14 @@
 
             <ImageButton
                 android:id="@+id/ib_home_cashOut"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="0dp"
+                android:layout_height="65dp"
                 android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
-                android:src="@drawable/home_cashin_button"
+                android:layout_marginBottom="16dp"
+                android:src="@drawable/home_ic_cashin"
                 app:layout_constraintBottom_toTopOf="@+id/tv_home_cashOut"
                 app:layout_constraintEnd_toStartOf="@+id/ib_home_debt"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -161,6 +152,8 @@
                 android:id="@+id/tv_home_cashOut"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:background="?attr/selectableItemBackground"
                 android:text="@string/all_cashOut"
                 app:layout_constraintBottom_toTopOf="@id/view_home_defider2"
                 app:layout_constraintEnd_toEndOf="@+id/ib_home_cashOut"
@@ -169,11 +162,12 @@
 
             <ImageButton
                 android:id="@+id/ib_home_debt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="0dp"
+                android:layout_height="65dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
-                android:src="@drawable/home_cashin_button"
+                android:src="@drawable/home_ic_cashin"
                 app:layout_constraintBottom_toTopOf="@+id/tv_home_debt"
                 app:layout_constraintEnd_toStartOf="@+id/ib_home_loan"
                 app:layout_constraintStart_toEndOf="@+id/ib_home_cashOut"
@@ -191,11 +185,12 @@
 
             <ImageButton
                 android:id="@+id/ib_home_loan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="0dp"
+                android:layout_height="65dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="24dp"
-                android:src="@drawable/home_cashin_button"
+                android:src="@drawable/home_ic_cashin"
                 app:layout_constraintBottom_toTopOf="@+id/tv_home_loan"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -249,16 +244,17 @@
                 android:id="@+id/rv_home_transaction"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="10dp"
+                android:paddingTop="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_business_status"
                 app:layout_constraintVertical_bias="0.0"
-                tools:itemCount="10"
+                tools:itemCount="3"
                 tools:listitem="@layout/item_cardview_transaction" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+</androidx.core.widget.NestedScrollView>
