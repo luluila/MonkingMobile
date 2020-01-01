@@ -5,14 +5,14 @@
     android:id="@+id/scrollview_home"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorBlueMedium"
     android:fillViewport="true"
-    tools:context=".ui.home.HomeFragment">
+    tools:context="com.ryutta.monkingmobile.ui.home.HomeFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constrain_home_layerParent"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorBlueDark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,241 +20,310 @@
 
         <TextView
             android:id="@+id/tv_home_balance"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/TextStyle.Normal.Small.Caps"
             android:layout_marginStart="24dp"
             android:layout_marginTop="32dp"
-            android:layout_marginEnd="24dp"
-            android:fontFamily="@font/roboto_regular"
             android:lineSpacingExtra="8sp"
             android:text="@string/home_balance"
             android:textColor="@color/colorWhite"
             android:textSize="14sp"
-            android:textStyle="normal"
-            app:layout_constraintBottom_toTopOf="@id/tv_home_balanceValue"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tv_home_balanceValue"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
+            style="@style/TextStyle.Medium.Small"
             android:layout_marginEnd="24dp"
-            android:fontFamily="@font/roboto_medium"
-            android:text="@string/home_balanceValue"
             android:textColor="@color/colorWhite"
             android:textSize="48sp"
-            app:layout_constraintBottom_toTopOf="@id/tv_home_balanceDate"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_home_balance"
-            app:layout_constraintVertical_bias="0.0" />
+            tools:text="@string/home_balanceValue" />
 
         <TextView
             android:id="@+id/tv_home_balanceDate"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="8dp"
+            style="@style/TextStyle.Normal.Small.Caps"
             android:layout_marginEnd="24dp"
-            android:layout_marginBottom="8dp"
-            android:fontFamily="@font/roboto_regular"
-            android:text="@string/home_balanceDate"
             android:textColor="@color/colorWhite"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="@id/constrain_home_layerInherit"
+            android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_home_balance"
+            tools:text="@string/home_balanceDate" />
+
+        <ImageButton
+            android:id="@+id/ib_home_cashIn"
+            style="@style/ImageButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="65dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:contentDescription="@string/all_cashIn"
+            android:src="@drawable/home_ic_cash_in"
+            app:layout_constraintEnd_toStartOf="@+id/ib_home_cashOut"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_home_balanceValue" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constrain_home_layerInherit"
+        <TextView
+            android:id="@+id/tv_home_cashIn"
+            style="@style/TextStyle.Normal.Small.Caps"
+            android:text="@string/all_cashIn"
+            app:layout_constraintEnd_toEndOf="@+id/ib_home_cashIn"
+            app:layout_constraintStart_toStartOf="@+id/ib_home_cashIn"
+            app:layout_constraintTop_toBottomOf="@+id/ib_home_cashIn" />
+
+        <ImageButton
+            android:id="@+id/ib_home_cashOut"
+            style="@style/ImageButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="65dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/home_ic_cash_out"
+            app:layout_constraintEnd_toStartOf="@+id/ib_home_debt"
+            app:layout_constraintStart_toEndOf="@+id/ib_home_cashIn"
+            app:layout_constraintTop_toTopOf="@+id/ib_home_cashIn"
+            android:contentDescription="@string/all_cashOut" />
+
+        <TextView
+            android:id="@+id/tv_home_cashOut"
+            style="@style/TextStyle.Normal.Small.Caps"
+            android:layout_marginBottom="16dp"
+            android:text="@string/all_cashOut"
+            app:layout_constraintEnd_toEndOf="@+id/ib_home_cashOut"
+            app:layout_constraintStart_toStartOf="@+id/ib_home_cashOut"
+            app:layout_constraintTop_toTopOf="@+id/tv_home_cashIn" />
+
+        <ImageButton
+            android:id="@+id/ib_home_debt"
+            style="@style/ImageButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="65dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/home_ic_debt"
+            app:layout_constraintEnd_toStartOf="@+id/ib_home_loan"
+            app:layout_constraintStart_toEndOf="@+id/ib_home_cashOut"
+            app:layout_constraintTop_toTopOf="@+id/ib_home_cashOut"
+            android:contentDescription="@string/all_debt" />
+
+        <TextView
+            android:id="@+id/tv_home_debt"
+            style="@style/TextStyle.Normal.Small.Caps"
+            android:text="@string/all_debt"
+            app:layout_constraintEnd_toEndOf="@+id/ib_home_debt"
+            app:layout_constraintStart_toStartOf="@+id/ib_home_debt"
+            app:layout_constraintTop_toTopOf="@+id/tv_home_cashIn" />
+
+        <ImageButton
+            android:id="@+id/ib_home_loan"
+            style="@style/ImageButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="65dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="24dp"
+            android:src="@drawable/home_ic_loan"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ib_home_debt"
+            app:layout_constraintTop_toTopOf="@+id/ib_home_cashOut"
+            android:contentDescription="@string/all_loan" />
+
+        <TextView
+            android:id="@+id/tv_home_loan"
+            style="@style/TextStyle.Normal.Small.Caps"
+            android:text="@string/all_loan"
+            app:layout_constraintEnd_toEndOf="@+id/ib_home_loan"
+            app:layout_constraintStart_toStartOf="@+id/ib_home_loan"
+            app:layout_constraintTop_toTopOf="@+id/tv_home_cashIn" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scrollview_home_inside"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginTop="24dp"
-            android:background="@drawable/all_bg_rounded_white"
+            android:layout_marginTop="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_home_balanceDate">
+            app:layout_constraintTop_toBottomOf="@+id/tv_home_balanceValue"
+            app:layout_constraintVertical_bias="1.0">
 
-            <include
-                android:id="@+id/rv_home_target"
-                layout="@layout/item_cardview_business"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constrain_home_layerInherit"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-
-            <View
-                android:id="@+id/view_home_defider"
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:layout_marginTop="16dp"
-                android:background="@android:color/darker_gray"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/rv_home_target" />
-
-            <ImageButton
-                android:id="@+id/ib_home_cashIn"
-                style="@style/Widget.AppCompat.Button.Colored"
-                android:layout_width="0dp"
-                android:layout_height="65dp"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="8dp"
-                android:src="@drawable/home_ic_cashin"
-                app:layout_constraintBottom_toTopOf="@+id/tv_home_cashIn"
-                app:layout_constraintEnd_toStartOf="@+id/ib_home_cashOut"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/view_home_defider" />
-
-            <TextView
-                android:id="@+id/tv_home_cashIn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="@string/all_cashIn"
-                app:layout_constraintBottom_toTopOf="@+id/view_home_defider2"
-                app:layout_constraintEnd_toEndOf="@+id/ib_home_cashIn"
-                app:layout_constraintStart_toStartOf="@+id/ib_home_cashIn"
-                app:layout_constraintTop_toBottomOf="@+id/ib_home_cashIn" />
-
-            <ImageButton
-                android:id="@+id/ib_home_cashOut"
-                style="@style/Widget.AppCompat.Button.Colored"
-                android:layout_width="0dp"
-                android:layout_height="65dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="16dp"
-                android:src="@drawable/home_ic_cashin"
-                app:layout_constraintBottom_toTopOf="@+id/tv_home_cashOut"
-                app:layout_constraintEnd_toStartOf="@+id/ib_home_debt"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/ib_home_cashIn"
-                app:layout_constraintTop_toTopOf="@+id/view_home_defider" />
-
-            <TextView
-                android:id="@+id/tv_home_cashOut"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:background="?attr/selectableItemBackground"
-                android:text="@string/all_cashOut"
-                app:layout_constraintBottom_toTopOf="@id/view_home_defider2"
-                app:layout_constraintEnd_toEndOf="@+id/ib_home_cashOut"
-                app:layout_constraintStart_toStartOf="@+id/ib_home_cashOut"
-                app:layout_constraintTop_toBottomOf="@+id/ib_home_cashOut" />
-
-            <ImageButton
-                android:id="@+id/ib_home_debt"
-                style="@style/Widget.AppCompat.Button.Colored"
-                android:layout_width="0dp"
-                android:layout_height="65dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                android:src="@drawable/home_ic_cashin"
-                app:layout_constraintBottom_toTopOf="@+id/tv_home_debt"
-                app:layout_constraintEnd_toStartOf="@+id/ib_home_loan"
-                app:layout_constraintStart_toEndOf="@+id/ib_home_cashOut"
-                app:layout_constraintTop_toTopOf="@+id/view_home_defider" />
-
-            <TextView
-                android:id="@+id/tv_home_debt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/all_debt"
-                app:layout_constraintBottom_toTopOf="@id/view_home_defider2"
-                app:layout_constraintEnd_toEndOf="@+id/ib_home_debt"
-                app:layout_constraintStart_toStartOf="@+id/ib_home_debt"
-                app:layout_constraintTop_toBottomOf="@+id/ib_home_debt" />
-
-            <ImageButton
-                android:id="@+id/ib_home_loan"
-                style="@style/Widget.AppCompat.Button.Colored"
-                android:layout_width="0dp"
-                android:layout_height="65dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="24dp"
-                android:src="@drawable/home_ic_cashin"
-                app:layout_constraintBottom_toTopOf="@+id/tv_home_loan"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/ib_home_debt"
-                app:layout_constraintTop_toTopOf="@+id/view_home_defider" />
-
-            <TextView
-                android:id="@+id/tv_home_loan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/all_loan"
-                app:layout_constraintBottom_toTopOf="@id/view_home_defider2"
-                app:layout_constraintEnd_toEndOf="@+id/ib_home_loan"
-                app:layout_constraintStart_toStartOf="@+id/ib_home_loan"
-                app:layout_constraintTop_toBottomOf="@+id/ib_home_loan" />
-
-            <View
-                android:id="@+id/view_home_defider2"
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:layout_marginTop="16dp"
-                android:background="@android:color/darker_gray"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_home_cashIn" />
-
-            <TextView
-                android:id="@+id/tv_business_status"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="16dp"
-                android:text="@string/all_recentTransaction"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/view_home_defider2" />
-
-            <TextView
-                android:id="@+id/tv_home_dateInfo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="24dp"
-                android:text="@string/all_dateInfo"
-                app:layout_constraintBottom_toTopOf="@id/rv_home_transaction"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/view_home_defider2"
-                app:layout_constraintVertical_bias="0.0" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_home_transaction"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:paddingTop="10dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="104dp"
+                android:background="@drawable/all_bg_rounded_white"
+                android:minHeight="600dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_business_status"
-                app:layout_constraintVertical_bias="0.0"
-                tools:itemCount="3"
-                tools:listitem="@layout/item_cardview_transaction" />
+                app:layout_constraintTop_toBottomOf="@id/tv_home_balanceDate">
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                <include
+                    android:id="@+id/rv_home_target"
+                    layout="@layout/item_cardview_business"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <!--            <androidx.recyclerview.widget.RecyclerView-->
+                <!--                android:id="@+id/rv_home_target"-->
+                <!--                android:layout_width="match_parent"-->
+                <!--                android:layout_height="100dp"-->
+                <!--                android:layout_marginTop="16dp"-->
+                <!--                app:layout_constraintEnd_toEndOf="parent"-->
+                <!--                app:layout_constraintHorizontal_bias="0.0"-->
+                <!--                app:layout_constraintStart_toStartOf="parent"-->
+                <!--                app:layout_constraintTop_toTopOf="parent"-->
+                <!--                tools:itemCount="1"-->
+                <!--                tools:listitem="@layout/item_cardview_business"-->
+                <!--                android:elevation="5dp"/>-->
+
+                <View
+                    android:id="@+id/view_home_divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@android:color/darker_gray"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rv_home_target" />
+
+                <TextView
+                    android:id="@+id/home_profit_loss_name"
+                    style="@style/TextStyle.Normal.Small.Caps"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/home_profit_loss_name"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view_home_divider" />
+
+                <Button
+                    android:id="@+id/btn_home_profit_loss_weekly"
+                    style="@style/ButtonStyle.Normal.Small"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="8dp"
+                    android:elevation="4dp"
+                    android:text="@string/onWeekly"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@+id/btn_home_profit_loss_monthly"
+                    app:layout_constraintTop_toBottomOf="@+id/home_profit_loss_name" />
+
+                <Button
+                    android:id="@+id/btn_home_profit_loss_monthly"
+                    style="@style/ButtonStyle.Normal.Small"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="24dp"
+                    android:elevation="0dp"
+                    android:text="@string/onMonthly"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/btn_home_profit_loss_weekly" />
+
+                <com.github.mikephil.charting.charts.BarChart
+                    android:id="@+id/chart_home_profit_loss_bar_chart"
+                    android:layout_width="match_parent"
+                    android:layout_height="325dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_home_profit_loss_weekly" />
+
+                <TextView
+                    android:id="@+id/home_income_expense_name"
+                    style="@style/TextStyle.Normal.Small.Caps"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/home_income_expense_name"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/chart_home_profit_loss_bar_chart"
+                    tools:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btn_home_income_expense_weekly"
+                    style="@style/ButtonStyle.Normal.Small"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="8dp"
+                    android:elevation="4dp"
+                    android:text="@string/onWeekly"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@+id/btn_home_income_expense_monthly"
+                    app:layout_constraintTop_toBottomOf="@+id/home_income_expense_name" />
+
+                <Button
+                    android:id="@+id/btn_home_income_expense_monthly"
+                    style="@style/ButtonStyle.Normal.Small"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="24dp"
+                    android:elevation="0dp"
+                    android:text="@string/onMonthly"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/btn_home_income_expense_weekly" />
+
+                <com.github.mikephil.charting.charts.BarChart
+                    android:id="@+id/chart_home_income_expense_bar_chart"
+                    android:layout_width="match_parent"
+                    android:layout_height="325dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_home_income_expense_weekly" />
+
+                <View
+                    android:id="@+id/view_home_divider2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@android:color/darker_gray"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/chart_home_income_expense_bar_chart" />
+
+                <TextView
+                    android:id="@+id/tv_business_status"
+                    style="@style/TextStyle.Normal.Small.Caps"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/all_recentTransaction"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view_home_divider2"
+                    tools:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_home_dateInfo"
+                    style="@style/TextStyle.Normal.Small.Caps"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="24dp"
+                    android:text="@string/onToday"
+                    app:layout_constraintBottom_toTopOf="@id/rv_home_transaction"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view_home_divider2"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_home_transaction"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_business_status"
+                    tools:itemCount="5"
+                    tools:listitem="@layout/item_cardview_transaction" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
